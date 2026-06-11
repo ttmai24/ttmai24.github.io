@@ -1,20 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thanh Mai, MS | Portfolio</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 1.1em;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    .project {
+      background: white;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+
+    .project h3 {
+      margin: 0;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .links a {
+      margin-right: 12px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    .resume-box {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+
+    iframe {
+      border: none;
+      margin-top: 10px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Thanh Mai, MS</h1>
-  <p>Health Analytics • Data Analyst • Researcher </p>
+  <div class="container">
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Sepsis Outcomes Dashboard</li>
-    <li>Maternal Health Analysis</li>
-    <li>Survival Analysis Explorer</li>
-  </ul>
+    <!-- HEADER -->
+    <header>
+      <h1>Thanh Mai, MS</h1>
+      <div class="subtitle">
+        Healthcare Analytics • Data Scientist • Researcher
+      </div>
 
-  <h2>Links</h2>
-  <p>Resume | LinkedIn | GitHub</p>
+      <div class="links" style="margin-top:10px;">
+        <a href="files/resume.pdf" target="_blank">Resume</a>
+        <a href="http://linkedin.com/in/thanh-24-m">LinkedIn</a>
+      </div>
+    </header>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Featured Projects</h2>
+
+      <div class="project">
+        <h3>Sepsis Outcomes Dashboard</h3>
+        <p>
+          Interactive R Shiny dashboard analyzing hospital-level sepsis outcomes,
+          mortality predictors, and length-of-stay variation across patients.
+        </p>
+        <p><strong>Tools:</strong> R, Shiny, Regression Analysis</p>
+        <a href="#">View Dashboard</a>
+      </div>
+
+      <div class="project">
+        <h3>Maternal Health Risk Analysis</h3>
+        <p>
+          Regression and causal inference analysis exploring socioeconomic and
+          clinical predictors of maternal outcomes.
+        </p>
+        <p><strong>Tools:</strong> R, GLM, Causal Inference</p>
+        <a href="#">View Report</a>
+      </div>
+
+      <div class="project">
+        <h3>Survival Analysis Explorer</h3>
+        <p>
+          Interactive visualization of Kaplan-Meier survival curves across cohorts.
+        </p>
+        <p><strong>Tools:</strong> R, Survival Analysis, Shiny</p>
+        <a href="#">View Dashboard</a>
+      </div>
+
+    </section>
+
+    <!-- RESUME -->
+    <section>
+      <h2>Resume</h2>
+
+      <div class="resume-box">
+        <p>
+          <a href="files/resume.pdf" target="_blank">
+            View / Download Resume
+          </a>
+        </p>
+
+        <iframe 
+          src="files/resume.pdf" 
+          width="100%" 
+          height="600px">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <h2>Experience & Honors</h2>
+      <p>
+        Add research experience, internships, awards, leadership roles, etc.
+      </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2026 Thanh Mai | GitHub Pages Portfolio
+    </footer>
+
+  </div>
 </body>
 </html>
