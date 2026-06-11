@@ -107,78 +107,97 @@
     </header>
 
     <!-- INTRO SECTION -->
-    <section>
-      <h2>About Me</h2>
-    
-      <p>
-        Hi! My name is Thanh, and I've recently completed my Master's in Data Science in Health with UCLA Biostatistics!
-        My interests revolve around applying statistical methods and machine learning
-        techniques to real-world datasets to better understand health outcomes and
-        inform decision-making.
-      </p>
-    
-      <p>
-        I have experience using R for data analysis, building interactive Shiny dashboards,
-        and conducting regression, survival analysis, and causal inference studies.
-        I enjoy turning complex datasets into clear, interpretable insights through
-        visualization and storytelling.
-      </p>
-    
-      <p>
-        <strong>Core interests:</strong>
-        Health analytics, causal inference, machine learning, data visualization, and
-        interactive dashboard development.
-      </p>
-    
-      <p>
-        <strong>Technical skills:</strong>
-        R, R Shiny, regression modeling, survival analysis, data cleaning, and visualization.
-      </p>
-      
-      <p><strong>Fun facts:</strong> Currently on a mission to visit U.S. National Parks 🌲</p>
+    <section style="display: flex; gap: 20px; align-items: flex-start;">
 
-      <p style="line-height: 1.8;">
-        ✔️ Yosemite &nbsp; ✔️ Sequoia &nbsp; ✔️ Kings Canyon &nbsp; ✔️ Grand Canyon &nbsp; ✔️ Zion <br>
-        ⏭️ <strong>Next stop:</strong> Lassen Volcanic National Park 🔥
-      </p>
-      
+      <!-- LEFT: IMAGE -->
+      <div style="flex: 1; max-width: 200px;">
+        <img src="files/headshot.jpg" 
+             style="width: 100%; border-radius: 12px;">
+      </div>
+    
+      <!-- RIGHT: TEXT -->
+      <div style="flex: 3;">
+        <h2>About Me</h2>
+    
+        <p>
+          Hi! My name is Thanh, and I've recently completed my Master's in Data Science in Health with UCLA Biostatistics!
+          My interests revolve around applying statistical methods and machine learning techniques to real-world datasets to
+          better understand health outcomes and inform decision-making.
+        </p>
+    
+        <p>
+          I have experience using R for data analysis, building interactive Shiny dashboards, and conducting regression,
+          survival analysis, and causal inference studies. I enjoy turning complex datasets into clear, interpretable insights through visualization and storytelling.
+        </p>
+    
+        <p>
+          <strong>Education:</strong><br>
+          UCLA Fielding School of Public Health, Biostatistcs Department — Master of Data Science in Health (June 2026)
+          UCLA College of Letters & Sciences, Psychology & Statistics Departent - Bachelor's in Psychology, minor in Statistics, specialization in Computing (June 2022)
+        </p>
+    
+        <p>
+          <strong>Technical skills:</strong><br>
+          R, R Shiny, regression, survival analysis, data visualization
+        </p>
+    
+        <p style="margin-top: 10px;">
+          <strong>Fun fact:</strong> Currently on a mission to visit U.S. National Parks 🌲<br>
+          ✔️ Yosemite &nbsp; ✔️ Sequoia &nbsp; ✔️ Kings Canyon &nbsp; ✔️ Grand Canyon &nbsp; ✔️ Zion<br>
+          ⏭️ <strong>Next stop:</strong> Lassen Volcanic National Park 🔥
+        </p>
+    
+      </div>
+    
+    </section>
+
+    <section>
+      <h2>Table of Contents</h2>
+    
+      <ul>
+        <li><a href="#reports">📄 Reports</a></li>
+        <li><a href="#dashboards">📊 Dashboards</a></li>
+      </ul>
     </section>
 
     <!-- PROJECTS -->
-    <section>
-      <h2>Featured Projects</h2>
-
+    <section id="reports">
+      <h2>Reports</h2>
+    
       <div class="project">
-        <h3>Sepsis Outcomes Dashboard</h3>
-        <p>
-          Interactive R Shiny dashboard analyzing hospital-level sepsis outcomes,
-          mortality predictors, and length-of-stay variation across patients.
-        </p>
-        <p><strong>Tools:</strong> R, Shiny, Regression Analysis</p>
-        <a href="#">View Dashboard</a>
-      </div>
-
-      <div class="project">
-        <h3>Maternal Health Risk Analysis</h3>
-        <p>
-          Regression and causal inference analysis exploring socioeconomic and
-          clinical predictors of maternal outcomes.
-        </p>
-        <p><strong>Tools:</strong> R, GLM, Causal Inference</p>
+        <h3>Sepsis Outcomes Analysis</h3>
+        <p>Statistical analysis of hospital-level sepsis outcomes using regression models.</p>
+        <p><strong>Tools:</strong> R, GLM, Data Cleaning</p>
         <a href="#">View Report</a>
       </div>
-
+    
       <div class="project">
-        <h3>Survival Analysis Explorer</h3>
-        <p>
-          Interactive visualization of Kaplan-Meier survival curves across cohorts.
-        </p>
-        <p><strong>Tools:</strong> R, Survival Analysis, Shiny</p>
+        <h3>Maternal Health Risk Factors</h3>
+        <p>Explores socioeconomic and clinical predictors of maternal outcomes.</p>
+        <p><strong>Tools:</strong> R, Causal Inference</p>
+        <a href="#">View Report</a>
+      </div>
+    </section>
+    
+    
+    <section id="dashboards">
+      <h2>Dashboards</h2>
+    
+      <div class="project">
+        <h3>Sepsis Outcomes Dashboard</h3>
+        <p>Interactive R Shiny dashboard exploring patient outcomes and mortality drivers.</p>
+        <p><strong>Tools:</strong> R Shiny, Visualization</p>
         <a href="#">View Dashboard</a>
       </div>
-
+    
+      <div class="project">
+        <h3>Survival Analysis Explorer</h3>
+        <p>Interactive Kaplan-Meier survival curve explorer across cohorts.</p>
+        <p><strong>Tools:</strong> R, Survival Analysis</p>
+        <a href="#">View Dashboard</a>
+      </div>
     </section>
-
+    
     <!-- RESUME -->
     <section>
       <h2>Resume</h2>
