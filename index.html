@@ -106,36 +106,60 @@
       </div>
     </header>
 
-    <!-- INTRO SECTION -->
-    <section style="display: flex; gap: 20px; align-items: center;">
+    <section>
 
-      <!-- LEFT: IMAGE -->
-      <div style="flex: 1; max-width: 200px;">
-        <img src="files/headshot.JPG" 
-             style="width: 100%; border-radius: 12px;">
+      <!-- TOP ROW: IMAGE + INTRO ONLY -->
+      <div style="
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      ">
+    
+        <!-- IMAGE -->
+        <div style="flex: 1; min-width: 180px; max-width: 220px; margin: auto;">
+          <img src="files/headshot.JPG" 
+               alt="Profile Photo"
+               style="width: 100%; border-radius: 12px; display: block;">
+        </div>
+    
+        <!-- INTRO TEXT -->
+        <div style="flex: 3; min-width: 250px;">
+          <h2>About Me 👋</h2>
+    
+          <p>
+            Hi👋 My name is Thanh, and I've recently completed my Master's in Data Science in Health with UCLA Biostatistics!
+            My interests revolve around applying statistical methods and machine learning techniques to real-world datasets to
+            better understand health outcomes and inform decision-making.
+          </p>
+    
+          <p>
+            I have experience using R for data analysis, building interactive Shiny dashboards, and conducting regression,
+            survival analysis, and causal inference studies. I enjoy turning complex datasets into clear, interpretable
+            insights through visualization and storytelling.
+          </p>
+
+        </div>
+    
       </div>
     
-      <!-- RIGHT: TEXT -->
-      <div style="flex: 3;">
-        <h2>About Me</h2>
+      <!-- BOTTOM ROW: FULL WIDTH STRIP -->
+      <div style="
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #ddd;
+        line-height: 1.8;
+      ">
     
         <p>
-          Hi👋 My name is Thanh, and I've recently completed my Master's in Data Science in Health with UCLA Biostatistics!
-          My interests revolve around applying statistical methods and machine learning techniques to real-world datasets to
-          better understand health outcomes and inform decision-making.
+          <strong>Technical skills:</strong> R, R Shiny, regression, survival analysis, data visualization
         </p>
     
         <p>
-          I have experience using R for data analysis, building interactive Shiny dashboards, and conducting regression,
-          survival analysis, and causal inference studies. I enjoy turning complex datasets into clear, interpretable insights through visualization and storytelling.
-        </p>
-     
-        <p>
-          <strong>Technical skills:</strong><br>
-          R, R Shiny, regression, survival analysis, data visualization
+          <strong>Interests:</strong> Health analytics, causal inference, survival analysis, machine learning
         </p>
     
-        <p style="margin-top: 10px;">
+        <p>
           <strong>Fun fact:</strong> Currently on a mission to visit all U.S. National Parks 🌲<br>
           ✔️ Yosemite &nbsp; ✔️ Sequoia &nbsp; ✔️ Kings Canyon &nbsp; ✔️ Grand Canyon &nbsp; ✔️ Zion<br>
           ⏭️ <strong>Next stop:</strong> Lassen Volcanic National Park 🔥
@@ -217,15 +241,15 @@
     <section id="professional">
   <h2>Professional Work</h2>
 
-  <p>
-    Data analysis and reporting work focused on public health indicators, including contributions to
-    Healthy Places Index-related analysis and state-level reporting projects.
-  </p>
-
   <!-- MAIN FEATURE: HPI -->
   <div class="project">
 
-    <h3>Healthy Places Index (HPI) – Public Health Analysis</h3>
+    <h3>Healthy Places Index (HPI) – Public Health Alliance of Southern California</h3>
+
+    <p>
+    Conducted statistical and spatial analyses of public health indicators, including regression modeling
+    and geospatial analysis supporting Healthy Places Index-related work.
+    </p>
 
     <!-- IMAGE THUMBNAIL -->
     <img src="files/ca_hpi_map.png" 
