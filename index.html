@@ -185,10 +185,36 @@
     
       <div style="
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 15px;
       ">
-    
+
+        <div class="project">
+        
+          <h3>
+            Evaluating Fairness in Cardiovascular Disease Prediction Using Random Forest Models
+          </h3>
+        
+          <p>
+            Biostatistics 212B Statistical Learning — UCLA Spring 2025
+          </p>
+            
+          <p>
+            Examined potential disparities in predictive performance to assess whether
+            machine learning models may reinforce existing inequities in cardiovascular care.
+          </p>
+        
+          <p>
+            <strong>Methods:</strong> Random Forest classification, hyperparameter tuning,
+            grid search cross-validation, subgroup performance analysis, model evaluation
+            (AUC, precision, recall, F1-score)
+          </p>
+        
+          <a href="files/cvd_ml_fairness.pdf" target="_blank">
+            View Full Report (PDF)
+          </a>
+        
+        </div>
         <div class="project">
       
           <h3>
@@ -205,13 +231,7 @@
           </p>
         
           <p>
-            Applied statistical analysis to evaluate differences in outcomes between urban and rural regions,
-            and assessed whether disparities remained significant after adjusting for demographic and socioeconomic covariates
-            (age, sex, poverty, education, and insurance coverage).
-          </p>
-        
-          <p>
-            <strong>Methods:</strong> Regression analysis, covariate adjustment, comparative epidemiological modeling
+            <strong>Methods:</strong> Regression analysis, covariate adjustment
           </p>
         
           <a href="files/urban_rural_ct_analysis.pdf" target="_blank">View Full Report (PDF)</a>
@@ -229,17 +249,16 @@
           </p>
         
           <p>
-            Survival analysis examining the association between Healthy Lifestyle Index (HLIS)
-            and time to cardiovascular death in a cohort of patients with stable coronary artery disease.
+            Examined survival patterns for cardiovascular death in patients with stable coronary artery disease,
+            focusing on differences by Healthy Lifestyle Index Score (HLIS).
           </p>
         
           <p>
-            <strong>Methods:</strong> Kaplan–Meier survival analysis, Cox proportional hazards modeling,
-            multivariable adjustment, and interaction testing.
+            <strong>Methods:</strong> Kaplan–Meier survival analysis, Cox proportional hazards modeling
           </p>
         
-          <a href="#" target="_blank">
-            View Full Report (PDF coming soon)
+          <a href="files/hlis_cvd_analysis.pdf" target="_blank">
+            View Full Report
           </a>
         
         </div>
@@ -259,13 +278,7 @@
           </p>
         
           <p>
-            Investigated how survival outcomes vary across cancer stages and anatomical tumor locations,
-            given known heterogeneity in prognosis even within the same clinical classification.
-          </p>
-        
-          <p>
-            <strong>Methods:</strong> Survival analysis, stratified comparisons by clinical stage and tumor site,
-            epidemiological interpretation of prognostic factors
+            <strong>Methods:</strong>  Kaplan–Meier survival analysis, Cox proportional hazards modeling
           </p>
         
           <a href="files/hnscc_survival_analysis.pdf" target="_blank">
@@ -288,15 +301,9 @@
             Examined associations between antidepressant prescription patterns and demographic, socioeconomic,
             and health-related variables in a U.S. population dataset.
           </p>
-        
+            
           <p>
-            Focused on how social determinants of health (including race, income, education, and healthcare access)
-            and clinical indicators (e.g., PHQ-2, K6, comorbidities) relate to antidepressant usage.
-          </p>
-        
-          <p>
-            <strong>Methods:</strong> Multivariable regression modeling, exploratory data analysis, and covariate adjustment
-            for demographic and clinical factors
+            <strong>Methods:</strong> Multivariable regression modeling
           </p>
         
           <a href="files/antidepressant_analysis.pdf" target="_blank">
