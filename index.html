@@ -1,421 +1,2435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thanh Mai, MS | Portfolio</title>
+
+  <title>Thanh Mai, MS | Health Data Scientist</title>
 
   <style>
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    :root {
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --text: #252525;
+      --muted: #6f716f;
+      --border: #e5e5df;
+
+      --sage: #8fa89a;
+      --sage-dark: #60796b;
+      --sage-light: #edf2ee;
+
+      --blue: #8fa9b8;
+      --blue-light: #edf3f5;
+
+      --blush: #e8d9d5;
+      --cream: #f4f0e8;
+
+      --max-width: 1100px;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #222;
-      line-height: 1.6;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
+
+      line-height: 1.7;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    header {
-      text-align: center;
-      padding-bottom: 30px;
-    }
-
-    h1 {
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      color: #666;
-      font-size: 1.1em;
-    }
-
-    section {
-      margin-top: 40px;
-    }
-
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
-
-    .project {
-      background: white;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-
-    .project h3 {
-      margin: 0;
-    }
 
     a {
-      color: #0077cc;
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: auto;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(250, 249, 246, 0.92);
+
+      backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid rgba(229, 229, 223, 0.8);
+    }
+
+
+    .nav-inner {
+      max-width: var(--max-width);
+
+      height: 70px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 20px;
+    }
+
+
+    .nav-name {
+      font-size: 1.05rem;
+
+      font-weight: 700;
+
+      letter-spacing: -0.02em;
+    }
+
+
+    .nav-links {
+      display: flex;
+
+      align-items: center;
+
+      gap: 26px;
+
+      font-size: 0.88rem;
+
+      color: var(--muted);
+    }
+
+
+    .nav-links a {
+      transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+
+    .nav-links a:hover {
+      color: var(--sage-dark);
+
+      transform: translateY(-1px);
+    }
+
+
+    .nav-linkedin {
+      color: var(--sage-dark) !important;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 600px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 80px 0 70px;
+    }
+
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: 1.5fr 0.8fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 7px 13px;
+
+      border-radius: 30px;
+
+      background: var(--sage-light);
+
+      color: var(--sage-dark);
+
+      font-size: 0.78rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.05em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+
+    h1 {
+      margin: 0;
+
+      font-size: clamp(3.2rem, 7vw, 5.7rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 750;
+    }
+
+
+    /* =========================================================
+       WAVING HAND
+    ========================================================= */
+
+    .wave {
+      display: inline-block;
+
+      transform-origin: 70% 70%;
+
+      animation: wave 2.5s ease-in-out infinite;
+    }
+
+
+    @keyframes wave {
+
+      0%,
+      60%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      10% {
+        transform: rotate(14deg);
+      }
+
+      20% {
+        transform: rotate(-8deg);
+      }
+
+      30% {
+        transform: rotate(14deg);
+      }
+
+      40% {
+        transform: rotate(-4deg);
+      }
+
+      50% {
+        transform: rotate(8deg);
+      }
+    }
+
+
+    .hero-title {
+      margin-top: 20px;
+
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+
+      line-height: 1.4;
+
+      color: var(--sage-dark);
+
+      font-weight: 500;
+    }
+
+
+    .hero-description {
+      max-width: 650px;
+
+      margin-top: 25px;
+
+      font-size: 1.02rem;
+
+      color: var(--muted);
+    }
+
+
+    .hero-buttons {
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+    }
+
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 11px 19px;
+
+      border-radius: 8px;
+
+      font-size: 0.88rem;
+
+      font-weight: 600;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+
+    .button-primary {
+      background: var(--text);
+
+      color: white;
+    }
+
+
+    .button-primary:hover {
+      background: var(--sage-dark);
+    }
+
+
+    .button-secondary {
+      border: 1px solid var(--border);
+
+      background: white;
+    }
+
+
+    .button-secondary:hover {
+      border-color: var(--sage);
+
+      background: var(--surface);
+    }
+
+
+    /* =========================================================
+       HEADSHOT
+    ========================================================= */
+
+    .headshot-wrapper {
+      position: relative;
+
+      max-width: 300px;
+
+      margin: auto;
+    }
+
+
+    .headshot-wrapper::before {
+      content: "";
+
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      top: 18px;
+      left: 18px;
+
+      border-radius: 22px;
+
+      background: var(--blush);
+
+      z-index: 0;
+    }
+
+
+    .headshot {
+      position: relative;
+
+      z-index: 1;
+
+      width: 100%;
+
+      border-radius: 22px;
+
+      object-fit: cover;
+    }
+
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 75px 0;
+
+      scroll-margin-top: 80px;
+    }
+
+
+    .section-label {
+      color: var(--sage-dark);
+
+      font-size: 0.76rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+
+    .section-title {
+      margin: 0;
+
+      font-size: clamp(2rem, 4vw, 3rem);
+
+      line-height: 1.1;
+
+      letter-spacing: -0.04em;
+    }
+
+
+    .section-intro {
+      max-width: 650px;
+
+      margin-top: 15px;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    #about {
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1.3fr;
+
+      gap: 60px;
+
+      margin-top: 40px;
+    }
+
+
+    .about-text p {
+      color: var(--muted);
+
+      margin-top: 0;
+
+      margin-bottom: 18px;
+    }
+
+
+    .education {
+      margin-top: 28px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid var(--border);
+    }
+
+
+    .education strong {
+      display: block;
+
+      margin-bottom: 4px;
+    }
+
+
+    .education span {
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 14px;
+    }
+
+
+    .skill-card {
+      padding: 23px;
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+
+      border-radius: 14px;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+
+      border-color: var(--sage);
+    }
+
+
+    .skill-icon {
+      font-size: 1.5rem;
+
+      margin-bottom: 12px;
+    }
+
+
+    .skill-card h3 {
+      margin: 0 0 7px;
+
+      font-size: 1rem;
+    }
+
+
+    .skill-card p {
+      margin: 0;
+
+      font-size: 0.84rem;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    #projects {
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+
+
+    .projects-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+
+      margin-top: 40px;
+    }
+
+
+    .project-card {
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+
+      padding: 27px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      min-height: 0;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+
+    .project-card:hover {
+      transform: translateY(-5px);
+
+      border-color: var(--sage);
+
+      box-shadow:
+        0 12px 35px rgba(40, 50, 45, 0.08);
+    }
+
+
+    .project-type {
+      font-size: 0.7rem;
+
+      color: var(--sage-dark);
+
+      font-weight: 700;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 14px;
+    }
+
+
+    .project-card h3 {
+      margin: 0;
+
+      font-size: 1.3rem;
+
+      line-height: 1.3;
+
+      letter-spacing: -0.02em;
+    }
+
+
+    .project-course {
+      margin-top: 9px;
+
+      font-size: 0.78rem;
+
+      color: var(--muted);
+    }
+
+
+    .project-card p {
+      color: var(--muted);
+
+      font-size: 0.88rem;
+
+      margin: 16px 0;
+    }
+
+
+    .tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-top: auto;
+
+      margin-bottom: 19px;
+    }
+
+
+    .tag {
+      padding: 5px 9px;
+
+      background: var(--cream);
+
+      border-radius: 5px;
+
+      font-size: 0.7rem;
+
+      color: #62625d;
+    }
+
+
+    .project-link {
+      color: var(--sage-dark);
+
+      font-size: 0.83rem;
+
+      font-weight: 700;
+
+      transition: gap 0.2s ease;
+    }
+
+
+    .project-link:hover {
       text-decoration: underline;
     }
 
-    .links a {
-      margin-right: 12px;
+
+    /* =========================================================
+       DASHBOARDS
+    ========================================================= */
+
+    .dashboard-section {
+      background: #f1f4f1;
+
+      padding: 75px 0;
     }
+
+
+    .dashboard-card {
+      margin-top: 40px;
+
+      background: white;
+
+      border-radius: 18px;
+
+      border: 1px solid var(--border);
+
+      overflow: hidden;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+    }
+
+
+    .dashboard-info {
+      padding: 40px;
+    }
+
+
+    .dashboard-info h3 {
+      margin: 0;
+
+      font-size: 1.8rem;
+
+      line-height: 1.2;
+
+      letter-spacing: -0.03em;
+    }
+
+
+    .dashboard-info p {
+      color: var(--muted);
+
+      margin: 16px 0;
+    }
+
+
+    .dashboard-preview {
+      min-height: 320px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: var(--blue-light);
+
+      padding: 30px;
+    }
+
+
+    .dashboard-preview-inner {
+      width: 100%;
+
+      padding: 25px;
+
+      background: white;
+
+      border-radius: 12px;
+
+      border: 1px solid var(--border);
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+      transition: transform 0.3s ease;
+    }
+
+
+    .dashboard-preview-inner:hover {
+      transform: scale(1.015);
+    }
+
+
+    .fake-chart-title {
+      font-size: 0.8rem;
+
+      font-weight: 700;
+
+      margin-bottom: 18px;
+    }
+
+
+    .chart-lines {
+      display: flex;
+
+      align-items: flex-end;
+
+      height: 140px;
+
+      gap: 10px;
+    }
+
+
+    .bar {
+      flex: 1;
+
+      background: var(--sage);
+
+      border-radius: 4px 4px 0 0;
+
+      opacity: 0.7;
+    }
+
+
+    .bar:nth-child(1) {
+      height: 40%;
+    }
+
+
+    .bar:nth-child(2) {
+      height: 65%;
+    }
+
+
+    .bar:nth-child(3) {
+      height: 50%;
+    }
+
+
+    .bar:nth-child(4) {
+      height: 80%;
+    }
+
+
+    .bar:nth-child(5) {
+      height: 68%;
+    }
+
+
+    .bar:nth-child(6) {
+      height: 92%;
+    }
+
+
+    /* =========================================================
+       PROFESSIONAL WORK / HPI
+    ========================================================= */
+
+    .professional {
+      background: var(--cream);
+
+      padding: 75px 0;
+    }
+
+
+    .hpi-card {
+      margin-top: 40px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      overflow: hidden;
+    }
+
+
+    .hpi-top {
+      padding: 38px 42px 24px;
+
+      display: grid;
+
+      grid-template-columns: 1.4fr 0.8fr;
+
+      gap: 50px;
+    }
+
+
+    .hpi-top h3 {
+      margin: 0;
+
+      font-size: 2rem;
+
+      line-height: 1.15;
+
+      letter-spacing: -0.035em;
+    }
+
+
+    .hpi-top p {
+      color: var(--muted);
+    }
+
+
+    .hpi-role {
+      border-left: 2px solid var(--sage);
+
+      padding-left: 20px;
+
+      font-size: 0.88rem;
+    }
+
+
+    .hpi-role strong {
+      display: block;
+
+      margin-bottom: 8px;
+    }
+
+
+    .hpi-role span {
+      color: var(--muted);
+    }
+
+
+    .hpi-map {
+      padding: 0 42px 28px;
+    }
+
+
+    .hpi-map img {
+      width: 100%;
+
+      max-height: 500px;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      border: 1px solid var(--border);
+    }
+
+
+    .hpi-links {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 10px;
+
+      padding: 0 42px 38px;
+    }
+
+
+    .hpi-link {
+      padding: 14px;
+
+      background: var(--sage-light);
+
+      border-radius: 9px;
+
+      font-size: 0.78rem;
+
+      font-weight: 600;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+
+    .hpi-link:hover {
+      transform: translateY(-3px);
+
+      background: #e4ece6;
+    }
+
+
+    /* =========================================================
+       OUTSIDE OF DATA
+    ========================================================= */
+
+    .fun-section {
+      padding: 55px 0 70px;
+    }
+
+
+    .fun-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+
+      margin-top: 28px;
+    }
+
+
+    .fun-card {
+      background: var(--blue-light);
+
+      border: 1px solid #dce6e9;
+
+      border-radius: 18px;
+
+      padding: 30px;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+
+    .fun-card:hover {
+      transform: translateY(-4px);
+
+      border-color: #cbdcdf;
+    }
+
+
+    .fun-icon {
+      font-size: 1.6rem;
+
+      margin-bottom: 12px;
+    }
+
+
+    .fun-card h3 {
+      margin: 0 0 7px;
+
+      font-size: 1.2rem;
+    }
+
+
+    .fun-card p {
+      margin: 0;
+
+      color: var(--muted);
+    }
+
+
+    .fun-list {
+      margin-top: 14px;
+
+      font-size: 0.8rem;
+
+      line-height: 1.8;
+
+      color: var(--sage-dark);
+    }
+
+
+    /* =========================================================
+       LET'S CONNECT
+    ========================================================= */
+
+    .connect-section {
+      padding: 65px 0 80px;
+    }
+
+
+    .connect-card {
+      background: var(--sage-light);
+
+      border: 1px solid #dce5df;
+
+      border-radius: 20px;
+
+      padding: 42px 48px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+
+    .connect-card h2 {
+      margin: 0;
+
+      font-size: clamp(2rem, 4vw, 3rem);
+
+      line-height: 1.1;
+
+      letter-spacing: -0.04em;
+    }
+
+
+    .connect-card p {
+      max-width: 560px;
+
+      margin: 11px 0 0;
+
+      color: var(--muted);
+    }
+
+
+    .connect-buttons {
+      display: flex;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+
+      flex-shrink: 0;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
     footer {
+      padding: 35px 0 40px;
+
+      border-top: 1px solid var(--border);
+
       text-align: center;
-      margin-top: 60px;
-      color: #888;
-      font-size: 0.9em;
+
+      color: var(--muted);
+
+      font-size: 0.8rem;
     }
 
-    .resume-box {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 850px) {
+
+      .hero {
+        padding: 70px 0;
+      }
+
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        text-align: center;
+      }
+
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+
+      .headshot-wrapper {
+        max-width: 250px;
+      }
+
+
+      .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+
+      .dashboard-card {
+        grid-template-columns: 1fr;
+      }
+
+
+      .hpi-top {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+      }
+
+
+      .hpi-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+      .connect-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+      }
     }
 
-    iframe {
-      border: none;
-      margin-top: 10px;
+
+    @media (max-width: 700px) {
+
+      .container {
+        width: min(var(--max-width), calc(100% - 28px));
+      }
+
+
+      .nav-inner {
+        padding: 0 14px;
+      }
+
+
+      .nav-name {
+        display: none;
+      }
+
+
+      .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+
+        font-size: 0.76rem;
+      }
+
+
+      .nav-links a:nth-child(3),
+      .nav-links a:nth-child(4) {
+        display: none;
+      }
+
+
+      section {
+        padding: 60px 0;
+      }
+
+
+      #about,
+      #projects {
+        padding-top: 55px;
+
+        padding-bottom: 55px;
+      }
+
+
+      .skills-grid,
+      .projects-grid,
+      .fun-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .projects-grid {
+        margin-top: 30px;
+      }
+
+
+      .dashboard-info {
+        padding: 30px;
+      }
+
+
+      .dashboard-preview {
+        padding: 20px;
+      }
+
+
+      .hpi-top {
+        padding: 30px;
+      }
+
+
+      .hpi-map {
+        padding: 0 30px 25px;
+      }
+
+
+      .hpi-links {
+        grid-template-columns: 1fr;
+
+        padding: 0 30px 30px;
+      }
+
+
+      .connect-card {
+        padding: 32px 26px;
+      }
+
+
+      .connect-buttons {
+        width: 100%;
+      }
     }
+
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        font-size: clamp(3rem, 15vw, 4.2rem);
+      }
+
+
+      .hero-title {
+        font-size: 1.05rem;
+      }
+
+
+      .hero-description {
+        font-size: 0.94rem;
+      }
+
+
+      .fun-card {
+        padding: 25px;
+      }
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+      }
+
+
+      .wave {
+        animation: none;
+      }
+    }
+
   </style>
+
 </head>
 
+
 <body>
-  <div class="container">
 
-    <!-- HEADER -->
-    <header>
-      <h1>Thanh Mai, MS</h1>
-      <div class="subtitle">
-        Health Analytics • Data Scientist • Researcher
-      </div>
 
-      <div class="links" style="margin-top:10px;">
-        <a href="files/resume.pdf" target="_blank">Resume</a>
-        <a href="http://linkedin.com/in/thanh-24-m">LinkedIn</a>
-      </div>
-    </header>
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-    <section>
+<nav>
 
-      <!-- TOP ROW: IMAGE + INTRO ONLY -->
-      <div style="
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        flex-wrap: wrap;
-      ">
-    
-        <!-- IMAGE -->
-        <div style="flex: 1; min-width: 180px; max-width: 220px; margin: auto;">
-          <img src="files/headshot.JPG" 
-               alt="Profile Photo"
-               style="width: 100%; border-radius: 12px; display: block;">
-        </div>
-    
-        <!-- INTRO TEXT -->
-        <div style="flex: 3; min-width: 250px;">
-          <h2>About Me 👋</h2>
-    
-          <p>
-            Hi! My name is Thanh, and I've recently completed my Master's of Data Science in Health with UCLA Biostatistics!
-            My interests revolve around applying statistical methods and machine learning techniques to real-world datasets to
-            better understand health outcomes and inform decision-making.
-          </p>
-    
-          <p>
-            I have experience using R for data analysis, building interactive Shiny dashboards, and conducting regression,
-            survival analysis, and causal inference studies. I enjoy turning complex datasets into clear, interpretable
-            insights through visualization and storytelling.
-          </p>
+  <div class="nav-inner">
 
-        </div>
-    
-      </div>
-    
-      <!-- BOTTOM ROW: FULL WIDTH STRIP -->
-      <div style="
-        margin-top: 20px;
-        padding-top: 15px;
-        border-top: 1px solid #ddd;
-        line-height: 1.8;
-      ">
-    
-        <p>
-          <strong>Technical skills:</strong> R, R Shiny, regression, survival analysis, data visualization
-        </p>
-    
-        <p>
-          <strong>Interests:</strong> Health analytics, causal inference, survival analysis, machine learning
-        </p>
-    
-        <p>
-          <strong>Fun fact:</strong> Currently on a mission to visit all U.S. National Parks 🌲<br>
-          ✔️ Yosemite &nbsp; ✔️ Sequoia &nbsp; ✔️ Kings Canyon &nbsp; ✔️ Redwoods &nbsp; ✔️ Lassen &nbsp<br>
-          ✔️ Joshua Tree &nbsp; ✔️ Crater Lake &nbsp; ✔️ Grand Canyon &nbsp; ✔️ Zion &nbsp<br>
-          ⏭️ <strong>Next stop:</strong> Channel Islands National Park 🌼
-        </p>
-    
-      </div>
-    
-    </section>
+    <a href="#top" class="nav-name">
+      Thanh Mai, MS
+    </a>
 
-    <section>
-      <h2>Table of Contents</h2>
-    
-      <ul>
-        <li><a href="#reports">📄 Reports (Projects)</a></li>
-        <li><a href="#dashboards">📊 Dashboards</a></li>
-        <li><a href="#professional">💼 Professional Work</a></li>
-      </ul>
-    </section>
 
-    <!-- PROJECTS -->
-    <section id="reports">
-      <h2>Reports</h2>
-    
-      <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 15px;
-      ">
+    <div class="nav-links">
 
-        <div class="project">
-        
-          <h3>
-            Evaluating Fairness in Cardiovascular Disease Prediction Using Random Forest Models
-          </h3>
-        
-          <p>
-            Biostatistics 212B Statistical Learning — UCLA Spring 2025
-          </p>
-            
-          <p>
-            Examined potential disparities in predictive performance to assess whether
-            machine learning models may reinforce existing inequities in cardiovascular care.
-          </p>
-        
-          <p>
-            <strong>Methods:</strong> Random Forest classification, hyperparameter tuning,
-            grid search cross-validation, subgroup performance analysis, model evaluation
-            (AUC, precision, recall, F1-score)
-          </p>
-        
-          <a href="files/cvd_ml_fairness.pdf" target="_blank">
-            View Full Report (PDF)
-          </a>
-        
-        </div>
-        <div class="project">
-      
-          <h3>
-            The Role of Location in Health Outcomes: Urban vs Rural California Census Tracts
-          </h3>
-        
-          <p>
-            Biostatistics 203A: Introduction to Data Management and Statistical Computing — UCLA Fall 2024
-          </p>
-        
-          <p>
-            Examined urban–rural disparities in health outcomes across California census tracts,
-            with a focus on cancer and heart disease prevalence.
-          </p>
-        
-          <p>
-            <strong>Methods:</strong> Regression analysis, covariate adjustment
-          </p>
-        
-          <a href="files/urban_rural_ct_analysis.pdf" target="_blank">View Full Report (PDF)</a>
-        
-        </div>
-    
-        <div class="project">
-        
-          <h3>
-            Survival Analysis of Cardiovascular Mortality by Healthy Lifestyle Index
-          </h3>
-        
-          <p>
-            Biostatistics M215: Survival Analysis — UCLA Winter 2026
-          </p>
-        
-          <p>
-            Examined survival patterns for cardiovascular death in patients with stable coronary artery disease,
-            focusing on differences by Healthy Lifestyle Index Score (HLIS).
-          </p>
-        
-          <p>
-            <strong>Methods:</strong> Kaplan–Meier survival analysis, Cox proportional hazards modeling
-          </p>
-        
-          <a href="files/hlis_cvd_analysis.pdf" target="_blank">
-            View Full Report (PDF)
-          </a>
-        
-        </div>
-    
-        <div class="project">
-          <h3>
-            Survival in Head and Neck Squamous Cell Carcinoma by Clinical Stage and Tumor Site
-          </h3>
-        
-          <p>
-            Biostatistics M215: Survival Analysis — UCLA Winter 2026
-          </p>
-        
-          <p>
-            Examined overall survival patterns in patients with head and neck squamous cell carcinoma (HNSCC),
-            focusing on differences by clinical stage and primary tumor site.
-          </p>
-        
-          <p>
-            <strong>Methods:</strong>  Kaplan–Meier survival analysis, Cox proportional hazards modeling
-          </p>
-        
-          <a href="files/hnscc_survival_analysis.pdf" target="_blank">
-            View Full Report (PDF)
-          </a>
-        
-        </div>
-    
-        <div class="project">
-        
-          <h3>
-            Investigating Associations Between Antidepressant Use and Demographic & Socioeconomic Factors
-          </h3>
-        
-          <p>
-            Biostatistics 218: Observational Health Data Science and Informatics — UCLA Fall 2025
-          </p>
-        
-          <p>
-            Examined associations between antidepressant prescription patterns and demographic, socioeconomic,
-            and health-related variables in a U.S. population dataset.
-          </p>
-            
-          <p>
-            <strong>Methods:</strong> Multivariable regression modeling
-          </p>
-        
-          <a href="files/antidepressant_analysis.pdf" target="_blank">
-            View Full Report (PDF)
-          </a>
-        
-        </div>
-    
-      </div>
-    </section>
-        
-    <section id="dashboards">
-      <h2>Dashboards</h2>
-      
-      <div class="project">
-        <h3>Head and Neck Cell Carcinoma Survival Analysis Explorer</h3>
-        <p>Interactive survival analysis explorer for Head and Neck Cell Carcinoma by Clinical Stage and Tumor Site.</p>
-        <p><strong>Tools:</strong> R, Survival Analysis</p>
-        <a href="https://ttmai24.shinyapps.io/HNSCC_Survival_Analysis/">View Dashboard</a>
-      </div>
-    </section>
+      <a href="#about">
+        About
+      </a>
 
-    <section id="professional">
-      <h2>Professional Work</h2>
-    
-      <!-- MAIN FEATURE: HPI -->
-      <div class="project">
-    
-        <h3>Healthy Places Index (HPI) – Public Health Alliance of Southern California</h3>
-    
-        <p>
-          Conducted statistical and spatial analyses of public health indicators, including regression modeling
-          and geospatial analysis supporting Healthy Places Index-related work, for both California and Utah.
-        </p>
-    
-        <!-- LINKS -->
-        <div style="
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-          margin-top: 10px;
-        ">
-    
-          <div class="project">
-            <h3>CA Healthy Places Index</h3>
-            <a href="https://www.healthyplacesindex.org/" target="_blank">View more</a>
-          </div>
-    
-          <div class="project">
-            <h3>Utah Healthy Places Index</h3>
-            <a href="https://dhhs.utah.gov/utahhpi/" target="_blank">View more</a>
-          </div>
-    
-        </div>
-    
-        <!-- IMAGE -->
-        <img src="files/ca_hpi_map.png"
-             alt="CA Healthy Places Index Map"
-             style="width:100%; border-radius:10px; margin:10px 0;">
-    
-        <p>
-          Contributed as second author to the following state-level public health reports:
-        </p>
-    
-        <!-- REPORTS GRID -->
-        <div style="
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-          margin-top: 10px;
-        ">
-    
-          <div class="project">
-            <h3>Utah HPI Technical Report</h3>
-            <a href="https://files.healthyplacesindex.org/UT-HPI-2-Technical-Report.zip" target="_blank">Download PDF</a>
-          </div>
-    
-          <div class="project">
-            <h3>Utah Tribal HPI Report</h3>
-            <a href="https://dhhs.utah.gov/wp-content/uploads/UT_Tribal_HPI_Report_Final-2025.pdf" target="_blank">Download PDF</a>
-          </div>
-    
-        </div>
-    
-      </div>
-    </section>
-    
-    <!-- RESUME -->
-    <section>
-      <h2>Resume</h2>
+      <a href="#projects">
+        Projects
+      </a>
 
-      <div class="resume-box">
-        <p>
-          <a href="files/resume.pdf" target="_blank">
-            View / Download Resume
-          </a>
-        </p>
+      <a href="#dashboards">
+        Dashboards
+      </a>
 
-        <iframe 
-          src="files/resume.pdf" 
-          width="100%" 
-          height="600px">
-        </iframe>
-      </div>
-    </section>
+      <a href="#professional">
+        Professional Work
+      </a>
 
-    <!-- FOOTER -->
-    <footer>
-      © 2026 Thanh Mai | GitHub Pages Portfolio
-    </footer>
+      <a
+        href="https://linkedin.com/in/thanh-24-m"
+        target="_blank"
+        class="nav-linkedin">
+
+        LinkedIn ↗
+
+      </a>
+
+    </div>
 
   </div>
+
+</nav>
+
+
+
+<main id="top">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-grid">
+
+
+      <div>
+
+        <div class="eyebrow">
+          Health Data Scientist
+        </div>
+
+
+        <h1>
+          Hi, I’m Thanh!
+          <span class="wave" aria-hidden="true">👋</span>
+        </h1>
+
+
+        <div class="hero-title">
+          Statistical Modeling · Machine Learning · Health Research
+        </div>
+
+
+        <p class="hero-description">
+          I use statistical methods, machine learning, and data
+          visualization to turn complex health data into clear,
+          interpretable insights that can support better
+          decision-making.
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+          <a
+            href="files/resume.pdf"
+            target="_blank"
+            class="button button-primary">
+
+            View Resume →
+
+          </a>
+
+
+          <a
+            href="https://linkedin.com/in/thanh-24-m"
+            target="_blank"
+            class="button button-secondary">
+
+            LinkedIn
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+
+
+      <div class="headshot-wrapper">
+
+        <img
+          src="files/headshot.JPG"
+          alt="Thanh Mai"
+          class="headshot">
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+  <div class="container">
+
+
+    <div class="section-label">
+      About
+    </div>
+
+
+    <h2 class="section-title">
+      A little about me
+    </h2>
+
+
+
+    <div class="about-grid">
+
+
+      <div class="about-text">
+
+
+        <p>
+          I'm Thanh, a health data scientist and researcher with
+          a Master's of Data Science in Health from UCLA Biostatistics.
+        </p>
+
+
+        <p>
+          My work sits at the intersection of statistics,
+          public health, and data science. I enjoy working with
+          real-world health data to understand patterns in
+          health outcomes, evaluate disparities, and communicate
+          findings through clear visualizations.
+        </p>
+
+
+        <p>
+          My experience includes regression, survival analysis,
+          causal inference, machine learning, geospatial analysis,
+          and interactive dashboard development using R Shiny.
+        </p>
+
+
+
+        <div class="education">
+
+
+          <strong>
+            UCLA Master of Data Science in Health
+          </strong>
+
+
+          <span>
+            Biostatistics · 2026
+          </span>
+
+
+          <br><br>
+
+
+          <strong>
+            UCLA B.A. Psychology & Statistics
+          </strong>
+
+
+          <span>
+            Psychology with Minor in Statistics and Specialization in Computing · 2022
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="skills-grid">
+
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            📊
+          </div>
+
+          <h3>
+            Statistical Analysis
+          </h3>
+
+          <p>
+            Regression · Survival Analysis ·
+            Statistical Modeling
+          </p>
+
+        </div>
+
+
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            🤖
+          </div>
+
+          <h3>
+            Machine Learning
+          </h3>
+
+          <p>
+            Random Forest · XGBoost ·
+            Predictive Modeling
+          </p>
+
+        </div>
+
+
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            🗺️
+          </div>
+
+          <h3>
+            Health & Spatial Data
+          </h3>
+
+          <p>
+            Public Health · SDOH ·
+            Geospatial Analysis
+          </p>
+
+        </div>
+
+
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            💻
+          </div>
+
+          <h3>
+            Data Products
+          </h3>
+
+          <p>
+            R · R Shiny · Data Visualization ·
+            Interactive Dashboards
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+  <div class="container">
+
+
+    <div class="section-label">
+      Selected Work
+    </div>
+
+
+    <h2 class="section-title">
+      Research & Projects
+    </h2>
+
+
+    <p class="section-intro">
+      Selected academic projects exploring health outcomes,
+      disparities, statistical modeling, and machine learning.
+    </p>
+
+
+
+    <div class="projects-grid">
+
+
+      <!-- PROJECT 1 -->
+
+      <div class="project-card">
+
+        <div class="project-type">
+          Machine Learning
+        </div>
+
+
+        <h3>
+          Evaluating Fairness in Cardiovascular Disease Prediction
+        </h3>
+
+
+        <div class="project-course">
+          Biostatistics 212B · Statistical Learning · UCLA
+        </div>
+
+
+        <p>
+          Examined potential disparities in predictive performance
+          to assess whether machine learning models may reinforce
+          existing inequities in cardiovascular care.
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">
+            Random Forest
+          </span>
+
+          <span class="tag">
+            AUC
+          </span>
+
+          <span class="tag">
+            Precision
+          </span>
+
+          <span class="tag">
+            Recall
+          </span>
+
+          <span class="tag">
+            Fairness
+          </span>
+
+        </div>
+
+
+        <a
+          href="files/cvd_ml_fairness.pdf"
+          target="_blank"
+          class="project-link">
+
+          View Full Report →
+
+        </a>
+
+      </div>
+
+
+
+      <!-- PROJECT 2 -->
+
+      <div class="project-card">
+
+        <div class="project-type">
+          Health Disparities
+        </div>
+
+
+        <h3>
+          The Role of Location in Health Outcomes
+        </h3>
+
+
+        <div class="project-course">
+          Biostatistics 203A · Statistical Computing · UCLA
+        </div>
+
+
+        <p>
+          Examined urban–rural disparities in cancer and heart
+          disease prevalence across California census tracts.
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">
+            Regression
+          </span>
+
+          <span class="tag">
+            Covariate Adjustment
+          </span>
+
+          <span class="tag">
+            California
+          </span>
+
+          <span class="tag">
+            Health Disparities
+          </span>
+
+        </div>
+
+
+        <a
+          href="files/urban_rural_ct_analysis.pdf"
+          target="_blank"
+          class="project-link">
+
+          View Full Report →
+
+        </a>
+
+      </div>
+
+
+
+      <!-- PROJECT 3 -->
+
+      <div class="project-card">
+
+        <div class="project-type">
+          Survival Analysis
+        </div>
+
+
+        <h3>
+          Cardiovascular Mortality by Healthy Lifestyle Index
+        </h3>
+
+
+        <div class="project-course">
+          Biostatistics M215 · Survival Analysis · UCLA
+        </div>
+
+
+        <p>
+          Examined survival patterns for cardiovascular death
+          in patients with stable coronary artery disease,
+          focusing on differences by Healthy Lifestyle Index.
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">
+            Kaplan-Meier
+          </span>
+
+          <span class="tag">
+            Cox Model
+          </span>
+
+          <span class="tag">
+            Survival Analysis
+          </span>
+
+        </div>
+
+
+        <a
+          href="files/hlis_cvd_analysis.pdf"
+          target="_blank"
+          class="project-link">
+
+          View Full Report →
+
+        </a>
+
+      </div>
+
+
+
+      <!-- PROJECT 4 -->
+
+      <div class="project-card">
+
+        <div class="project-type">
+          Survival Analysis
+        </div>
+
+
+        <h3>
+          Survival in Head & Neck Cancer
+        </h3>
+
+
+        <div class="project-course">
+          Biostatistics M215 · Survival Analysis · UCLA
+        </div>
+
+
+        <p>
+          Examined overall survival patterns in patients with
+          head and neck squamous cell carcinoma by clinical stage
+          and primary tumor site.
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">
+            Kaplan-Meier
+          </span>
+
+          <span class="tag">
+            Cox Model
+          </span>
+
+          <span class="tag">
+            HNSCC
+          </span>
+
+        </div>
+
+
+        <a
+          href="files/hnscc_survival_analysis.pdf"
+          target="_blank"
+          class="project-link">
+
+          View Full Report →
+
+        </a>
+
+      </div>
+
+
+
+      <!-- PROJECT 5 -->
+
+      <div class="project-card">
+
+        <div class="project-type">
+          Observational Health Data
+        </div>
+
+
+        <h3>
+          Antidepressant Use & Demographic Factors
+        </h3>
+
+
+        <div class="project-course">
+          Biostatistics 218 · Observational Health Data Science & Informatics · UCLA
+        </div>
+
+
+        <p>
+          Examined associations between antidepressant
+          prescription patterns and demographic, socioeconomic,
+          and health-related variables.
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">
+            Regression
+          </span>
+
+          <span class="tag">
+            Observational Data
+          </span>
+
+          <span class="tag">
+            Health Informatics
+          </span>
+
+        </div>
+
+
+        <a
+          href="files/antidepressant_analysis.pdf"
+          target="_blank"
+          class="project-link">
+
+          View Full Report →
+
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<section id="dashboards" class="dashboard-section">
+
+  <div class="container">
+
+
+    <div class="section-label">
+      Interactive Data
+    </div>
+
+
+    <h2 class="section-title">
+      Dashboards
+    </h2>
+
+
+    <p class="section-intro">
+      Interactive tools that make statistical analysis easier
+      to explore and interpret.
+    </p>
+
+
+
+    <div class="dashboard-card">
+
+
+      <div class="dashboard-info">
+
+
+        <div class="project-type">
+          R Shiny
+        </div>
+
+
+        <h3>
+          Head & Neck Cancer
+          Survival Explorer
+        </h3>
+
+
+        <p>
+          An interactive survival analysis explorer examining
+          overall survival among patients with head and neck
+          squamous cell carcinoma.
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">
+            R
+          </span>
+
+          <span class="tag">
+            Shiny
+          </span>
+
+          <span class="tag">
+            Kaplan-Meier
+          </span>
+
+          <span class="tag">
+            Cox Regression
+          </span>
+
+        </div>
+
+
+        <a
+          href="https://ttmai24.shinyapps.io/HNSCC_Survival_Analysis/"
+          target="_blank"
+          class="button button-primary">
+
+          Open Dashboard →
+
+        </a>
+
+
+      </div>
+
+
+
+      <div class="dashboard-preview">
+
+
+        <div class="dashboard-preview-inner">
+
+
+          <div class="fake-chart-title">
+            Survival Analysis Explorer
+          </div>
+
+
+          <div class="chart-lines">
+
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+
+          </div>
+
+
+          <div style="
+            margin-top:15px;
+            font-size:0.72rem;
+            color:#777;
+          ">
+
+            Interactive survival analysis ·
+            Clinical stage ·
+            Tumor site
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROFESSIONAL WORK
+========================================================= -->
+
+<section id="professional" class="professional">
+
+  <div class="container">
+
+
+    <div class="section-label">
+      Professional Experience
+    </div>
+
+
+    <h2 class="section-title">
+      Healthy Places Index
+    </h2>
+
+
+    <p class="section-intro">
+      Public Health Alliance of Southern California
+    </p>
+
+
+
+    <div class="hpi-card">
+
+
+      <div class="hpi-top">
+
+
+        <div>
+
+          <h3>
+            Using data to understand
+            community health.
+          </h3>
+
+
+          <p>
+            Conducted statistical and spatial analyses of public
+            health indicators supporting Healthy Places Index work
+            across California and Utah.
+          </p>
+
+        </div>
+
+
+
+        <div class="hpi-role">
+
+          <strong>
+            My contributions
+          </strong>
+
+
+          <span>
+            Statistical analysis<br>
+            Spatial analysis<br>
+            Data automation<br>
+            Public health reporting<br>
+            Data visualization
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="hpi-map">
+
+        <img
+          src="files/ca_hpi_map.png"
+          alt="California Healthy Places Index Map">
+
+      </div>
+
+
+
+      <div class="hpi-links">
+
+
+        <a
+          href="https://www.healthyplacesindex.org/"
+          target="_blank"
+          class="hpi-link">
+
+          California HPI →
+
+        </a>
+
+
+        <a
+          href="https://dhhs.utah.gov/utahhpi/"
+          target="_blank"
+          class="hpi-link">
+
+          Utah HPI →
+
+        </a>
+
+
+        <a
+          href="https://files.healthyplacesindex.org/UT-HPI-2-Technical-Report.zip"
+          target="_blank"
+          class="hpi-link">
+
+          Utah Technical Report →
+
+        </a>
+
+
+        <a
+          href="https://dhhs.utah.gov/wp-content/uploads/UT_Tribal_HPI_Report_Final-2025.pdf"
+          target="_blank"
+          class="hpi-link">
+
+          Utah Tribal HPI →
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OUTSIDE OF DATA
+========================================================= -->
+
+<section class="fun-section">
+
+  <div class="container">
+
+
+    <div class="section-label">
+      👋 Outside of data
+    </div>
+
+
+    <div class="fun-grid">
+
+
+      <!-- NATIONAL PARKS -->
+
+      <div class="fun-card">
+
+
+        <div class="fun-icon">
+          🌲
+        </div>
+
+
+        <h3>
+          National park enthusiast
+        </h3>
+
+
+        <p>
+          I’ve visited 9 national parks so far!
+          Channel Islands is next on the list.
+        </p>
+
+
+        <div class="fun-list">
+          Yosemite · Sequoia · Kings Canyon · Redwoods ·
+          Lassen · Joshua Tree · Crater Lake · Grand Canyon · Zion
+        </div>
+
+
+      </div>
+
+
+
+      <!-- BROADWAY -->
+
+      <div class="fun-card">
+
+
+        <div class="fun-icon">
+          🎭
+        </div>
+
+
+        <h3>
+          Broadway fanatic
+        </h3>
+
+
+        <p>
+          I have strong opinions about musicals
+          and will happily talk about them for hours!
+        </p>
+
+
+        <div class="fun-list">
+          Favorites: Phantom of the Opera ·
+          Moulin Rouge! · Hadestown · The Lost Boys
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LET'S CONNECT
+========================================================= -->
+
+<section id="connect" class="connect-section">
+
+  <div class="container">
+
+
+    <div class="connect-card">
+
+
+      <div>
+
+
+        <div class="section-label">
+          Get in touch
+        </div>
+
+
+        <h2>
+          Let's connect!
+        </h2>
+
+
+        <p>
+          I love meeting new people and am always interested in connecting with people
+          working at the intersection of health, data, and research!
+        </p>
+
+
+      </div>
+
+
+
+      <div class="connect-buttons">
+
+
+        <a
+          href="https://linkedin.com/in/thanh-24-m"
+          target="_blank"
+          class="button button-primary">
+
+          Connect on LinkedIn →
+
+        </a>
+
+
+        <a
+          href="files/resume.pdf"
+          target="_blank"
+          class="button button-secondary">
+
+          View Resume
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container">
+
+    <strong>
+      Thanh Mai, MS
+    </strong>
+
+    <br>
+
+    Health Data Scientist · Researcher
+
+    <br><br>
+
+    © 2026 Thanh Mai
+
+  </div>
+
+</footer>
+
+
+</main>
+
 </body>
+
 </html>
