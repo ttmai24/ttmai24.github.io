@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thank You | Thanh Mai, MS</title>
+
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --text: #252525;
+      --muted: #6f756f;
+      --sage: #8fa89a;
+      --sage-dark: #60796b;
+      --border: #e5e7e3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+    }
+
+    .thank-you {
+      width: 100%;
+      max-width: 560px;
+      padding: 56px 48px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(40, 50, 45, 0.06);
+    }
+
+    .icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #edf3ef;
+      color: var(--sage-dark);
+      font-size: 1.5rem;
+    }
+
+    .eyebrow {
+      margin-bottom: 10px;
+      color: var(--sage-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 2.2rem;
+      line-height: 1.15;
+    }
+
+    p {
+      margin: 0 auto 28px;
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    a {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: var(--sage-dark);
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 650;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    a:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 500px) {
+      .thank-you {
+        padding: 42px 26px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="thank-you">
+
+    <div class="icon">✓</div>
+
+    <div class="eyebrow">Message Received</div>
+
+    <h1>Thank you for reaching out!</h1>
+
+    <p>
+      Your message has been sent successfully. I appreciate you taking
+      the time to connect and will get back to you soon!
+    </p>
+
+    <a href="index.html#connect">Back to my portfolio</a>
+
+  </main>
+
+</body>
+</html>
