@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,22 +15,18 @@
     :root {
       --bg: #f8f7f3;
       --surface: #ffffff;
-
       --text: #252725;
       --muted: #6d716d;
 
       --border: #e3e4de;
 
-      /* Primary */
       --sage: #91a99b;
       --sage-dark: #60786b;
       --sage-light: #e9f0eb;
 
-      /* Secondary */
       --blue: #9aafbb;
       --blue-light: #edf2f4;
 
-      /* Warm accents */
       --blush: #e8d9d5;
       --cream: #f3efe7;
 
@@ -46,7 +40,7 @@
 
 
     html {
-      scroll-behavior: auto;
+      scroll-behavior: smooth;
     }
 
 
@@ -54,24 +48,15 @@
       margin: 0;
 
       font-family:
+        Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
         sans-serif;
 
       background: var(--bg);
       color: var(--text);
-
-      line-height: 1.7;
-    }
-
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      line-height: 1.6;
     }
 
 
@@ -81,16 +66,20 @@
     }
 
 
-    button,
-    input,
-    textarea {
-      font-family: inherit;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
 
     .container {
-      width: min(var(--max-width), calc(100% - 40px));
-      margin: auto;
+      width: min(100% - 40px, var(--max-width));
+      margin: 0 auto;
+    }
+
+
+    section {
+      padding: 78px 0;
     }
 
 
@@ -101,106 +90,98 @@
     nav {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 50;
 
-      background: rgba(250, 249, 246, 0.92);
-
+      background: rgba(248, 247, 243, 0.94);
       backdrop-filter: blur(12px);
 
-      border-bottom:
-        1px solid rgba(229, 229, 223, 0.8);
+      border-bottom: 1px solid rgba(227, 228, 222, 0.8);
     }
 
 
     .nav-inner {
-      max-width: var(--max-width);
+      width: min(100% - 40px, var(--max-width));
+      margin: 0 auto;
 
-      height: 70px;
-
-      margin: auto;
+      min-height: 70px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding: 0 20px;
+      gap: 30px;
     }
 
 
-    .nav-name {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
 
-      font-size: 1.05rem;
       font-weight: 700;
-
       letter-spacing: -0.02em;
     }
 
 
-    .nav-profile {
-      width: 38px;
-      height: 38px;
-
-      border-radius: 50%;
+    .brand img {
+      width: 40px;
+      height: 40px;
 
       object-fit: cover;
+      border-radius: 50%;
 
       border: 2px solid white;
 
-      box-shadow: 0 0 0 1px var(--border);
+      box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+    }
 
-      flex-shrink: 0;
+
+    .brand-name {
+      font-size: 0.95rem;
     }
 
 
     .nav-links {
       display: flex;
-
       align-items: center;
+      gap: 24px;
 
-      gap: 26px;
-
-      font-size: 0.88rem;
-
+      font-size: 0.82rem;
       color: var(--muted);
     }
 
 
     .nav-links a {
-      transition:
-        color 0.2s ease,
-        transform 0.2s ease;
+      transition: color 0.2s ease;
     }
 
 
     .nav-links a:hover {
       color: var(--sage-dark);
-
-      transform: translateY(-1px);
     }
 
 
-    .nav-linkedin {
-      color: var(--sage-dark) !important;
-      font-weight: 600;
+    .nav-links a:last-child {
+      color: var(--sage-dark);
+      font-weight: 650;
     }
 
 
     /* =========================================================
        HERO
+       Enlarged to match the larger HTML1 landing-page feel
     ========================================================= */
 
     .hero {
       min-height: calc(100vh - 70px);
 
-      background: #f3f5f1;
-
       display: flex;
       align-items: center;
 
       padding: 70px 0 80px;
+
+      background: #f3f5f1;
 
       border-bottom: 1px solid var(--border);
     }
@@ -209,7 +190,9 @@
     .hero-grid {
       display: grid;
 
-      grid-template-columns: 1.5fr 0.8fr;
+      grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(300px, 0.8fr);
 
       gap: 80px;
 
@@ -220,24 +203,27 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
+      gap: 8px;
 
-      padding: 7px 13px;
-
-      border-radius: 30px;
-
-      background: var(--sage-light);
+      margin-bottom: 20px;
 
       color: var(--sage-dark);
 
-      font-size: 0.78rem;
+      font-size: 0.76rem;
+      font-weight: 750;
 
-      font-weight: 600;
-
-      letter-spacing: 0.05em;
-
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
 
-      margin-bottom: 20px;
+
+    .eyebrow::before {
+      content: "";
+
+      width: 28px;
+      height: 1px;
+
+      background: var(--sage);
     }
 
 
@@ -254,16 +240,12 @@
     }
 
 
-    /* =========================================================
-       WAVING HAND
-    ========================================================= */
-
     .wave {
       display: inline-block;
 
       transform-origin: 70% 70%;
 
-      animation: wave 2.5s ease-in-out infinite;
+      animation: wave 2.2s infinite;
     }
 
 
@@ -275,7 +257,8 @@
         transform: rotate(0deg);
       }
 
-      10% {
+      10%,
+      30% {
         transform: rotate(14deg);
       }
 
@@ -283,707 +266,1017 @@
         transform: rotate(-8deg);
       }
 
-      30% {
-        transform: rotate(14deg);
-      }
-
       40% {
-        transform: rotate(-4deg);
+        transform: rotate(10deg);
       }
 
       50% {
-        transform: rotate(8deg);
+        transform: rotate(-4deg);
       }
+
     }
 
 
     .hero-title {
-      margin-top: 20px;
-
-      font-size: clamp(1.25rem, 2vw, 1.65rem);
-
-      line-height: 1.4;
+      margin: 20px 0 0;
 
       color: var(--sage-dark);
 
-      font-weight: 500;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+
+      font-weight: 650;
+
+      line-height: 1.5;
     }
 
 
-    .hero-description {
+    .hero-subtitle {
       max-width: 650px;
 
-      margin-top: 25px;
+      margin: 25px 0 0;
+
+      color: var(--muted);
 
       font-size: 1.02rem;
 
-      color: var(--muted);
+      line-height: 1.75;
     }
 
 
     .hero-buttons {
       display: flex;
+      flex-wrap: wrap;
 
       gap: 12px;
-
-      flex-wrap: wrap;
 
       margin-top: 30px;
     }
 
 
-    /* =========================================================
-       BUTTONS
-    ========================================================= */
-
     .button {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
 
-      padding: 11px 19px;
+      min-height: 43px;
 
-      border-radius: 8px;
+      padding: 0 19px;
 
-      font-size: 0.88rem;
+      border-radius: 999px;
 
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: 650;
+
+      border: 1px solid var(--border);
 
       transition:
         transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
-
-      cursor: pointer;
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
 
     .button:hover {
       transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.07);
     }
 
 
     .button-primary {
-      background: var(--text);
-
-      color: white;
-
-      border: 1px solid var(--text);
-    }
-
-
-    .button-primary:hover {
       background: var(--sage-dark);
+      color: white;
 
       border-color: var(--sage-dark);
     }
 
 
     .button-secondary {
-      border: 1px solid var(--border);
-
       background: white;
-
-      color: var(--text);
     }
 
 
-    .button-secondary:hover {
-      border-color: var(--sage);
-
-      background: var(--surface);
+    .hero-visual {
+      display: flex;
+      justify-content: center;
     }
 
 
-    /* =========================================================
-       HEADSHOT
-    ========================================================= */
-
-    .headshot-wrapper {
+    .hero-photo-wrap {
       position: relative;
 
-      max-width: 300px;
+      width: min(100%, 350px);
 
-      margin: auto;
+      isolation: isolate;
     }
 
 
-    .headshot-wrapper::before {
-      content: "";
+    .hero-photo {
+      position: relative;
 
-      position: absolute;
+      z-index: 2;
 
       width: 100%;
-      height: 100%;
 
-      top: 18px;
-      left: 18px;
+      aspect-ratio: 0.9;
 
-      border-radius: 22px;
+      object-fit: cover;
+
+      border-radius: 26px;
+
+      box-shadow:
+        0 25px 60px rgba(55, 70, 60, 0.13);
+    }
+
+
+    .hero-accent {
+      position: absolute;
+
+      width: 115px;
+      height: 115px;
+
+      right: -24px;
+      bottom: -24px;
+
+      border-radius: 50%;
 
       background: var(--blush);
 
-      z-index: 0;
-    }
-
-
-    .headshot {
-      position: relative;
-
       z-index: 1;
-
-      width: 100%;
-
-      border-radius: 22px;
-
-      object-fit: cover;
     }
 
 
     /* =========================================================
-       GENERAL SECTIONS
+       SECTION HEADERS
     ========================================================= */
 
-    section {
-      padding: 75px 0;
+    .section-heading {
+      display: flex;
 
-      scroll-margin-top: 80px;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-bottom: 38px;
     }
 
 
     .section-label {
+      margin-bottom: 7px;
+
       color: var(--sage-dark);
 
-      font-size: 0.76rem;
+      font-size: 0.72rem;
+      font-weight: 750;
 
-      font-weight: 700;
-
-      letter-spacing: 0.12em;
-
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-
-      margin-bottom: 10px;
     }
 
 
-    .section-title {
+    .section-title,
+    h2 {
       margin: 0;
 
       font-size: clamp(2rem, 4vw, 3rem);
 
-      line-height: 1.1;
+      line-height: 1.05;
 
       letter-spacing: -0.04em;
     }
 
 
-    .section-intro {
-      max-width: 650px;
+    .section-intro,
+    .section-description {
+      max-width: 450px;
 
-      margin-top: 15px;
+      margin: 0;
 
       color: var(--muted);
+
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+
+    section[id] {
+      scroll-margin-top: 80px;
     }
 
 
     /* =========================================================
        ABOUT
     ========================================================= */
-    
-    #about {
-      background: #ffffff;
-      padding-top: 58px;
-      padding-bottom: 58px;
+
+    .about {
+      background: white;
     }
-    
+
+
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 42px;
-      margin-top: 5px;
-      align-items: center;
+
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 0.85fr);
+
+      gap: 48px;
+
+      align-items: start;
     }
-            
-    
-/* =========================================================
-   EDUCATION — COMPACT
-========================================================= */
+
+
+    .about-copy p {
+      margin: 0 0 17px;
+
+      color: #535853;
+
+      font-size: 0.96rem;
+
+      line-height: 1.8;
+    }
+
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .about-copy strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+
+      min-width: 0;
+    }
+
+
+    .skill-card {
+      position: relative;
+
+      padding: 21px;
+
+      background: var(--bg);
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+    }
+
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+
+      border-color: #ccd5ce;
+
+      box-shadow:
+        0 12px 28px rgba(50, 60, 55, 0.08);
+    }
+
+
+    .skill-icon {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 39px;
+      height: 39px;
+
+      margin-bottom: 14px;
+
+      border-radius: 12px;
+
+      background: var(--sage-light);
+
+      font-size: 1rem;
+
+      transition:
+        transform 0.22s ease;
+    }
+
+
+    .skill-card:hover .skill-icon {
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+
+    .skill-card h3 {
+      margin: 0 0 8px;
+
+      font-size: 0.87rem;
+
+      letter-spacing: -0.01em;
+    }
+
+
+    .skill-card p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 0.75rem;
+
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       EDUCATION
+    ========================================================= */
 
     .education {
       margin-top: 24px;
+
       padding-top: 18px;
+
       border-top: 1px solid var(--border);
     }
-    
+
+
     .education-title {
       margin-bottom: 12px;
-    
+
       color: var(--sage-dark);
-    
+
       font-size: 0.68rem;
+
       font-weight: 700;
-    
+
       letter-spacing: 0.12em;
+
       text-transform: uppercase;
     }
-    
+
+
     .education-item {
       position: relative;
-    
+
       display: grid;
-      grid-template-columns: 34px minmax(0, 1fr) auto;
-    
+
+      grid-template-columns:
+        34px
+        minmax(0, 1fr)
+        auto;
+
       gap: 11px;
 
       padding-bottom: 15px;
     }
-    
+
+
     .education-item:last-child {
       padding-bottom: 0;
     }
 
+
     .education-item:not(:last-child)::after {
       content: "";
-    
+
       position: absolute;
-    
+
       left: 16px;
+
       top: 34px;
+
       bottom: 0;
-    
+
       width: 1px;
-    
+
       background: var(--border);
     }
-    
+
+
     .education-logo {
       position: relative;
+
       z-index: 1;
-    
+
       width: 34px;
       height: 34px;
-    
+
       display: flex;
+
       align-items: center;
       justify-content: center;
-    
+
       border-radius: 50%;
-    
+
       background: var(--surface);
-    
+
       border: 1px solid var(--border);
-    
+
       overflow: hidden;
     }
-    
+
+
     .education-logo img {
       width: 40px;
       height: 40px;
-    
+
       object-fit: contain;
     }
-    
+
+
     .education-school {
       margin: 0 !important;
-    
+
       font-size: 0.68rem !important;
-    
+
       font-weight: 700;
-    
+
       color: var(--sage-dark) !important;
-    
+
       letter-spacing: 0.03em;
     }
-    
+
+
     .education-degree {
       margin: 1px 0 0 !important;
-    
-      font-size: 0.88rem !important;
-    
+
+      font-size: 0.9rem !important;
+
       font-weight: 650;
-    
+
       line-height: 1.25;
-    
+
       color: var(--text) !important;
     }
-    
+
+
     .education-details {
       margin: 2px 0 0 !important;
-    
+
       color: var(--muted) !important;
-    
-      font-size: 0.69rem !important;
-    
+
+      font-size: 0.8rem !important;
+
       line-height: 1.3;
     }
-    
+
+
     .education-year {
       padding-top: 0;
-    
+
       color: var(--muted);
-    
+
       font-size: 0.68rem;
-    
+
       font-weight: 600;
-    
+
       white-space: nowrap;
     }
-    
+
+
     .education-honor {
       display: inline-flex;
-    
-      align-items: center;
-    
-      gap: 4px;
-    
-      margin-top: 3px;
-    
-      color: var(--sage-dark);
-    
-      font-size: 0.67rem;
-    
-      font-weight: 650;
-    }      
 
-    
-    /* =========================================================
-       SKILLS
-    ========================================================= */
-    
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      min-width: 0;
-      align-self: start;
-      margin-top: 55px;
+      align-items: center;
+
+      gap: 4px;
+
+      margin-top: 3px;
+
+      color: var(--sage-dark);
+
+      font-size: 0.67rem;
+
+      font-weight: 650;
     }
-    
-    .skill-card {
-      min-width: 0;
-    
-      padding: 25px;
-    
-      background: var(--surface);
-    
-      border: 1px solid var(--border);
-    
-      border-radius: 14px;
-    
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
-    }
-    
-    .skill-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--sage);
-    }
-    
-    .skill-icon {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-    
-    .skill-card h3 {
-      margin: 0 0 6px;
-      font-size: 0.98rem;
-    }
-    
-    .skill-card p {
-      margin: 0;
-      font-size: 0.82rem;
-      line-height: 1.55;
-      color: var(--muted);
-    }
+
 
     /* =========================================================
        PROJECTS
     ========================================================= */
 
-    #projects {
-      padding-top: 65px;
-      padding-bottom: 65px;
+    .projects {
+      background: var(--bg);
     }
 
 
-    .projects-grid {
-      display: grid;
+    .projects-header {
+      display: flex;
 
-      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      align-items: flex-end;
 
-      gap: 18px;
+      gap: 30px;
 
-      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+
+
+    .projects-header p {
+      max-width: 460px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+
+      line-height: 1.7;
+    }
+
+
+    .projects-scroll-wrapper {
+      position: relative;
+    }
+
+
+    .projects-scroll-wrapper::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      right: 0;
+      bottom: 28px;
+
+      width: 82px;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(248, 247, 243, 0),
+          rgba(248, 247, 243, 0.94)
+        );
+
+      z-index: 3;
+    }
+
+
+    .projects-track {
+      display: flex;
+
+      gap: 22px;
+
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      padding: 3px 3px 20px 2px;
+
+      scroll-snap-type: x proximity;
+
+      scroll-behavior: smooth;
+
+      scrollbar-width: none;
+
+      -webkit-overflow-scrolling: touch;
+    }
+
+
+    .projects-track::-webkit-scrollbar {
+      display: none;
     }
 
 
     .project-card {
-      background: var(--surface);
+      flex: 0 0 390px;
+
+      min-height: 360px;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 28px;
+
+      background: white;
 
       border: 1px solid var(--border);
 
-      border-radius: 16px;
+      border-radius: 23px;
 
-      padding: 27px;
+      box-shadow:
+        0 8px 25px rgba(50, 60, 55, 0.045);
 
-      display: flex;
-
-      flex-direction: column;
-
-      min-height: 0;
+      scroll-snap-align: start;
 
       transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
     }
 
 
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
 
-      border-color: var(--sage);
+      border-color: #d2d8d3;
 
       box-shadow:
-        0 12px 35px rgba(40, 50, 45, 0.08);
+        0 15px 35px rgba(50, 60, 55, 0.09);
+    }
+
+
+    .project-number {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 35px;
+      height: 35px;
+
+      margin-bottom: 25px;
+
+      border-radius: 50%;
+
+      background: var(--sage-light);
+
+      color: var(--sage-dark);
+
+      font-size: 0.73rem;
+
+      font-weight: 750;
     }
 
 
     .project-type {
-      font-size: 0.7rem;
+      margin-bottom: 8px;
 
       color: var(--sage-dark);
 
-      font-weight: 700;
+      font-size: 0.7rem;
 
-      letter-spacing: 0.1em;
+      font-weight: 750;
+
+      letter-spacing: 0.08em;
 
       text-transform: uppercase;
-
-      margin-bottom: 14px;
     }
 
 
     .project-card h3 {
       margin: 0;
 
-      font-size: 1.3rem;
+      max-width: 330px;
 
-      line-height: 1.3;
+      font-size: 1.28rem;
 
-      letter-spacing: -0.02em;
+      line-height: 1.25;
+
+      letter-spacing: -0.025em;
     }
 
 
     .project-course {
-      margin-top: 9px;
-
-      font-size: 0.78rem;
+      margin-top: 12px;
 
       color: var(--muted);
+
+      font-size: 0.76rem;
+
+      line-height: 1.5;
     }
 
 
-    .project-card p {
-      color: var(--muted);
-
-      font-size: 0.88rem;
-
-      margin: 16px 0;
-    }
-
-
-    .tags {
+    .project-tags {
       display: flex;
 
       flex-wrap: wrap;
 
       gap: 7px;
 
-      margin-top: auto;
-
-      margin-bottom: 19px;
+      margin-top: 20px;
     }
 
 
-    .tag {
+    .project-tag {
       padding: 5px 9px;
 
-      background: var(--cream);
+      border-radius: 999px;
 
-      border-radius: 5px;
+      background: var(--bg);
 
-      font-size: 0.7rem;
+      border: 1px solid var(--border);
 
-      color: #62625d;
+      color: #666b66;
+
+      font-size: 0.66rem;
+
+      font-weight: 600;
+    }
+
+
+    .project-footer {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-top: auto;
+
+      padding-top: 28px;
     }
 
 
     .project-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
       color: var(--sage-dark);
 
-      font-size: 0.83rem;
+      font-size: 0.76rem;
 
       font-weight: 700;
-
-      transition: gap 0.2s ease;
     }
 
 
-    .project-link:hover {
-      text-decoration: underline;
+    .project-link span {
+      transition:
+        transform 0.2s ease;
+    }
+
+
+    .project-link:hover span {
+      transform: translateX(4px);
+    }
+
+
+    .projects-scroll-hint {
+      display: flex;
+
+      justify-content: flex-end;
+      align-items: center;
+
+      gap: 9px;
+
+      margin-top: 7px;
+
+      color: var(--sage-dark);
+
+      font-size: 0.76rem;
+
+      font-weight: 650;
+
+      letter-spacing: 0.01em;
+    }
+
+
+    .projects-scroll-arrow {
+      color: var(--sage-dark);
+
+      font-size: 1.1rem;
+
+      transition:
+        transform 0.2s ease;
+    }
+
+
+    .projects-scroll-hint:hover .projects-scroll-arrow {
+      transform: translateX(4px);
     }
 
 
     /* =========================================================
-       DASHBOARDS
+       DASHBOARD
     ========================================================= */
 
     .dashboard-section {
-      background: #f1f4f1;
-
-      padding: 75px 0;
+      background: white;
     }
 
 
     .dashboard-card {
-      margin-top: 40px;
-
-      background: white;
-
-      border-radius: 18px;
-
-      border: 1px solid var(--border);
-
-      overflow: hidden;
-
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
-    }
+      grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, 0.95fr);
 
-
-    .dashboard-info {
-      padding: 40px;
-    }
-
-
-    .dashboard-info h3 {
-      margin: 0;
-
-      font-size: 1.8rem;
-
-      line-height: 1.2;
-
-      letter-spacing: -0.03em;
-    }
-
-
-    .dashboard-info p {
-      color: var(--muted);
-
-      margin: 16px 0;
-    }
-
-
-    .dashboard-preview {
-      min-height: 320px;
-
-      display: flex;
+      gap: 45px;
 
       align-items: center;
 
-      justify-content: center;
+      padding: 38px;
 
       background: var(--blue-light);
 
-      padding: 30px;
+      border: 1px solid #dde5e8;
+
+      border-radius: 26px;
     }
 
 
-    .dashboard-preview-inner {
-      width: 100%;
+    .dashboard-copy h3 {
+      margin: 0 0 13px;
 
-      padding: 25px;
+      font-size: 1.55rem;
+
+      line-height: 1.25;
+
+      letter-spacing: -0.025em;
+    }
+
+
+    .dashboard-copy p {
+      margin: 0;
+
+      color: #5d6668;
+
+      font-size: 0.86rem;
+
+      line-height: 1.75;
+    }
+
+
+    .dashboard-meta {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 20px;
+    }
+
+
+    .dashboard-meta span {
+      padding: 6px 10px;
+
+      background: rgba(255, 255, 255, 0.7);
+
+      border: 1px solid rgba(200, 211, 215, 0.8);
+
+      border-radius: 999px;
+
+      color: #5f6a6d;
+
+      font-size: 0.67rem;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       FAKE DASHBOARD CHART
+    ========================================================= */
+
+    .dashboard-preview {
+      overflow: hidden;
+
+      padding: 22px;
 
       background: white;
 
-      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
 
-      border: 1px solid var(--border);
+      border-radius: 17px;
 
       box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.05);
-
-      transition: transform 0.3s ease;
+        0 15px 35px rgba(40, 55, 60, 0.08);
     }
 
 
-    .dashboard-preview-inner:hover {
-      transform: scale(1.015);
-    }
+    .chart-top {
+      display: flex;
 
-
-    .fake-chart-title {
-      font-size: 0.8rem;
-
-      font-weight: 700;
+      justify-content: space-between;
+      align-items: center;
 
       margin-bottom: 18px;
     }
 
 
-    .chart-lines {
+    .chart-title {
+      font-size: 0.74rem;
+
+      font-weight: 700;
+    }
+
+
+    .chart-filter {
+      padding: 4px 8px;
+
+      background: var(--blue-light);
+
+      border-radius: 6px;
+
+      color: #697477;
+
+      font-size: 0.6rem;
+    }
+
+
+    .chart-area {
       display: flex;
 
       align-items: flex-end;
 
-      height: 140px;
+      gap: 13px;
 
-      gap: 10px;
+      height: 185px;
+
+      padding: 12px 10px 0;
+
+      border-left: 1px solid #e5e8e8;
+
+      border-bottom: 1px solid #e5e8e8;
     }
 
 
-    .bar {
+    .chart-bar {
       flex: 1;
+
+      min-width: 15px;
 
       background: var(--sage);
 
-      border-radius: 4px 4px 0 0;
+      border-radius: 5px 5px 0 0;
 
-      opacity: 0.7;
+      opacity: 0.82;
+
+      transition:
+        height 0.3s ease,
+        opacity 0.2s ease;
     }
 
 
-    .bar:nth-child(1) {
-      height: 40%;
+    .chart-bar:hover {
+      opacity: 1;
     }
 
 
-    .bar:nth-child(2) {
-      height: 65%;
+    .bar-1 {
+      height: 45%;
     }
 
 
-    .bar:nth-child(3) {
-      height: 50%;
+    .bar-2 {
+      height: 58%;
     }
 
 
-    .bar:nth-child(4) {
-      height: 80%;
+    .bar-3 {
+      height: 72%;
     }
 
 
-    .bar:nth-child(5) {
-      height: 68%;
+    .bar-4 {
+      height: 64%;
     }
 
 
-    .bar:nth-child(6) {
-      height: 92%;
+    .bar-5 {
+      height: 81%;
+    }
+
+
+    .bar-6 {
+      height: 69%;
+    }
+
+
+    .bar-7 {
+      height: 88%;
+    }
+
+
+    .chart-legend {
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-top: 11px;
+
+      color: #858b8c;
+
+      font-size: 0.59rem;
+    }
+
+
+    .chart-legend span:first-child {
+      color: var(--sage-dark);
+
+      font-weight: 650;
     }
 
 
@@ -993,122 +1286,183 @@
 
     .professional {
       background: var(--cream);
-
-      padding: 75px 0;
     }
 
 
-    .hpi-card {
-      margin-top: 40px;
+    .professional-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+      gap: 45px;
+
+      align-items: center;
+    }
+
+
+    .professional-copy h3 {
+      margin: 0 0 15px;
+
+      font-size: 1.7rem;
+
+      line-height: 1.2;
+
+      letter-spacing: -0.03em;
+    }
+
+
+    .professional-copy p {
+      margin: 0 0 16px;
+
+      color: #5f625f;
+
+      font-size: 0.88rem;
+
+      line-height: 1.8;
+    }
+
+
+    .professional-copy p:last-of-type {
+      margin-bottom: 0;
+    }
+
+
+    /* =========================================================
+       HPI IMAGE
+       Hover enlarges image + entire image is clickable
+    ========================================================= */
+
+    .professional-image {
+      display: block;
+
+      padding: 14px;
 
       background: white;
 
       border: 1px solid var(--border);
 
-      border-radius: 18px;
+      border-radius: 23px;
 
-      overflow: hidden;
+      box-shadow:
+        0 12px 30px rgba(50, 60, 55, 0.06);
+
+      cursor: pointer;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
 
-    .hpi-top {
-      padding: 38px 42px 24px;
+    .professional-image:hover {
+      transform: scale(1.035);
 
-      display: grid;
-
-      grid-template-columns: 1.4fr 0.8fr;
-
-      gap: 50px;
+      box-shadow:
+        0 18px 40px rgba(50, 60, 55, 0.12);
     }
 
 
-    .hpi-top h3 {
-      margin: 0;
+    .professional-image:focus-visible {
+      outline: 3px solid var(--sage);
 
-      font-size: 2rem;
-
-      line-height: 1.15;
-
-      letter-spacing: -0.035em;
+      outline-offset: 4px;
     }
 
 
-    .hpi-top p {
-      color: var(--muted);
-    }
-
-
-    .hpi-role {
-      border-left: 2px solid var(--sage);
-
-      padding-left: 20px;
-
-      font-size: 0.88rem;
-    }
-
-
-    .hpi-role strong {
-      display: block;
-
-      margin-bottom: 8px;
-    }
-
-
-    .hpi-role span {
-      color: var(--muted);
-    }
-
-
-    .hpi-map {
-      padding: 0 42px 28px;
-    }
-
-
-    .hpi-map img {
+    .professional-image img {
       width: 100%;
 
-      max-height: 550px;
-
-      object-fit: cover;
-
-      border-radius: 12px;
-
-      border: 1px solid var(--border);
+      border-radius: 14px;
     }
 
 
-    .hpi-links {
+    .professional-role {
+      margin-top: 22px;
+
       display: grid;
 
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-      gap: 10px;
-
-      padding: 0 42px 38px;
+      gap: 9px;
     }
 
 
-    .hpi-link {
-      padding: 14px;
+    .professional-role-item {
+      padding: 10px 12px;
 
-      background: var(--sage-light);
+      background: rgba(255, 255, 255, 0.65);
 
-      border-radius: 9px;
+      border: 1px solid rgba(227, 228, 222, 0.9);
 
-      font-size: 0.78rem;
+      border-radius: 11px;
 
-      font-weight: 600;
+      color: #656a65;
+
+      font-size: 0.68rem;
+
+      line-height: 1.4;
+    }
+
+
+    .professional-role-item strong {
+      display: block;
+
+      margin-bottom: 2px;
+
+      color: var(--sage-dark);
+
+      font-size: 0.65rem;
+
+      font-weight: 700;
+    }
+
+
+    .professional-links {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 22px;
+    }
+
+
+    .professional-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      min-height: 34px;
+
+      padding: 0 12px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 999px;
+
+      color: var(--sage-dark);
+
+      font-size: 0.67rem;
+
+      font-weight: 650;
 
       transition:
         transform 0.2s ease,
-        background 0.2s ease;
+        box-shadow 0.2s ease;
     }
 
 
-    .hpi-link:hover {
-      transform: translateY(-3px);
+    .professional-link:hover {
+      transform: translateY(-2px);
 
-      background: #e4ece6;
+      box-shadow:
+        0 6px 14px rgba(50, 60, 55, 0.07);
     }
 
 
@@ -1117,52 +1471,64 @@
     ========================================================= */
 
     .fun-section {
-      padding: 70px 0 45px;
+      background: white;
     }
 
 
     .fun-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
       gap: 18px;
-
-      margin-top: 28px;
     }
 
 
     .fun-card {
-      background: var(--blue-light);
+      padding: 24px;
 
-      border: 1px solid #dce6e9;
+      border: 1px solid var(--border);
 
-      border-radius: 18px;
+      border-radius: 21px;
 
-      padding: 30px;
+      background: var(--bg);
 
       transition:
-        transform 0.25s ease,
-        border-color 0.25s ease;
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
     }
 
 
     .fun-card:hover {
       transform: translateY(-4px);
 
-      border-color: #cbdcdf;
+      box-shadow:
+        0 12px 26px rgba(50, 60, 55, 0.07);
     }
 
 
     .fun-icon {
-      font-size: 1.6rem;
+      display: flex;
 
-      margin-bottom: 12px;
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+
+      margin-bottom: 17px;
+
+      border-radius: 13px;
+
+      background: var(--sage-light);
+
+      font-size: 1.05rem;
     }
 
 
     .fun-card h3 {
-      margin: 0 0 7px;
+      margin: 0 0 8px;
 
       font-size: 1.2rem;
     }
@@ -1172,25 +1538,21 @@
       margin: 0;
 
       color: var(--muted);
-    }
 
+      font-size: 0.9rem;
 
-    .fun-list {
-      margin-top: 14px;
-
-      font-size: 0.8rem;
-
-      line-height: 1.8;
-
-      color: var(--sage-dark);
+      line-height: 1.7;
     }
 
 
     /* =========================================================
-       LET'S CONNECT
+       CONNECT
+       Smaller side-by-side buttons
     ========================================================= */
 
-    .connect-section {
+    .connect {
+      background: var(--sage-light);
+
       padding: 35px 0 80px;
     }
 
@@ -1198,11 +1560,11 @@
     .connect-card {
       background: var(--sage-light);
 
-      border: 1px solid #dce5df;
+      border: none;
 
       border-radius: 20px;
 
-      padding: 42px 48px;
+      padding: 10px 20px;
 
       display: flex;
 
@@ -1210,7 +1572,7 @@
 
       justify-content: space-between;
 
-      gap: 40px;
+      gap: 20px;
     }
 
 
@@ -1226,11 +1588,15 @@
 
 
     .connect-card p {
-      max-width: 560px;
+      max-width: 570px;
 
       margin: 11px 0 0;
 
-      color: var(--muted);
+      color: #5f6963;
+
+      font-size: 0.92rem;
+
+      line-height: 1.8;
     }
 
 
@@ -1242,6 +1608,71 @@
       flex-wrap: wrap;
 
       flex-shrink: 0;
+    }
+
+
+    .connect-buttons .button {
+      min-height: 40px;
+
+      padding: 0 16px;
+
+      font-size: 0.76rem;
+
+      border-radius: 8px;
+    }
+
+
+    /* Black Email Me button */
+
+    .connect-buttons .button-primary {
+      background: #252525;
+
+      border-color: #252525;
+
+      color: white;
+    }
+
+
+    /* White LinkedIn button */
+
+    .connect-buttons .button-secondary {
+      background: white;
+
+      border-color: var(--border);
+
+      color: var(--text);
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 30px 0;
+
+      background: var(--bg);
+
+      border-top: 1px solid var(--border);
+    }
+
+
+    .footer-inner {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    .footer-inner p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 0.7rem;
     }
 
 
@@ -1259,7 +1690,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       padding: 20px;
@@ -1318,18 +1748,15 @@
       box-shadow:
         0 25px 70px rgba(37, 39, 37, 0.16);
 
-      transform:
-        translateY(12px)
-        scale(0.98);
+      transform: translateY(12px) scale(0.98);
 
-      transition: transform 0.2s ease;
+      transition:
+        transform 0.2s ease;
     }
 
 
     .contact-modal.active .contact-card {
-      transform:
-        translateY(0)
-        scale(1);
+      transform: translateY(0) scale(1);
     }
 
 
@@ -1337,11 +1764,9 @@
       position: absolute;
 
       top: 16px;
-
       right: 18px;
 
       width: 36px;
-
       height: 36px;
 
       border: none;
@@ -1464,16 +1889,13 @@
     }
 
 
-    /* =========================================================
-       HCAPTCHA
-    ========================================================= */
-
     .h-captcha {
       display: flex;
 
       justify-content: center;
-
       align-items: center;
+
+      width: 100%;
 
       margin: 20px 0 22px;
     }
@@ -1483,15 +1905,8 @@
       width: 100%;
 
       margin-top: 4px;
-    }
 
-
-    .contact-submit:disabled {
-      opacity: 0.7;
-
-      cursor: default;
-
-      transform: none;
+      cursor: pointer;
     }
 
 
@@ -1521,63 +1936,37 @@
 
 
     /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      padding: 35px 0 40px;
-
-      border-top: 1px solid var(--border);
-
-      text-align: center;
-
-      color: var(--muted);
-
-      font-size: 0.8rem;
-    }
-
-
-    /* =========================================================
        RESPONSIVE
     ========================================================= */
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .professional-grid {
+        grid-template-columns: 1fr;
+      }
+
 
       .hero {
-        padding: 70px 0;
+        min-height: auto;
+
+        padding-top: 75px;
       }
 
 
-      .hero-grid {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-
-        text-align: center;
+      .hero-visual {
+        justify-content: flex-start;
+        padding-right: 20px;
       }
 
 
-      .hero-description {
-        margin-left: auto;
-
-        margin-right: auto;
+      .hero-photo-wrap {
+        width: min(100%, 330px);
       }
 
 
-      .hero-buttons {
-        justify-content: center;
-      }
-
-
-      .headshot-wrapper {
-        max-width: 250px;
-      }
-
-
-      .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
+      .skills-grid {
+        margin-top: 10px;
       }
 
 
@@ -1586,15 +1975,8 @@
       }
 
 
-      .hpi-top {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-      }
-
-
-      .hpi-links {
-        grid-template-columns: repeat(2, 1fr);
+      .professional-grid {
+        gap: 30px;
       }
 
 
@@ -1603,43 +1985,15 @@
 
         flex-direction: column;
       }
+
     }
 
 
     @media (max-width: 700px) {
 
-      .container {
-        width: min(
-          var(--max-width),
-          calc(100% - 28px)
-        );
-      }
-
-
+      .container,
       .nav-inner {
-        padding: 0 14px;
-      }
-
-
-      .nav-name {
-        display: none;
-      }
-
-
-      .nav-links {
-        width: 100%;
-
-        justify-content: center;
-
-        gap: 15px;
-
-        font-size: 0.76rem;
-      }
-
-
-      .nav-links a:nth-child(3),
-      .nav-links a:nth-child(4) {
-        display: none;
+        width: min(100% - 28px, var(--max-width));
       }
 
 
@@ -1648,55 +2002,140 @@
       }
 
 
-      #about,
-      #projects {
-        padding-top: 55px;
+      .nav-inner {
+        min-height: 62px;
+      }
 
-        padding-bottom: 55px;
+
+      .nav-links {
+        display: none;
+      }
+
+
+      .brand-name {
+        font-size: 0.88rem;
+      }
+
+
+      .hero {
+        padding: 65px 0 70px;
+      }
+
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+
+      .hero-title {
+        font-size: 1.05rem;
+      }
+
+
+      .hero-subtitle {
+        font-size: 0.97rem;
+      }
+
+
+      .section-heading,
+      .projects-header {
+        display: block;
+      }
+
+
+      .section-description,
+      .projects-header p {
+        margin-top: 13px;
       }
 
 
       .skills-grid,
-      .projects-grid,
-      .fun-grid {
+      .fun-grid,
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
 
-      .projects-grid {
-        margin-top: 30px;
+      .education-card {
+        grid-template-columns:
+          48px
+          minmax(0, 1fr);
+
+        gap: 14px;
+
+        padding: 17px;
       }
 
 
-      .dashboard-info {
-        padding: 30px;
+      .education-year {
+        grid-column: 2;
+      }
+
+
+      .project-card {
+        flex-basis: 82vw;
+
+        min-height: 350px;
+
+        padding: 24px;
+      }
+
+
+      .projects-scroll-wrapper::after {
+        width: 52px;
+
+        bottom: 28px;
+
+        background:
+          linear-gradient(
+            to right,
+            rgba(248, 247, 243, 0),
+            rgba(248, 247, 243, 0.9)
+          );
+      }
+
+
+      .projects-scroll-hint {
+        justify-content: flex-end;
+
+        font-size: 0.7rem;
+      }
+
+
+      .dashboard-card {
+        padding: 23px;
       }
 
 
       .dashboard-preview {
-        padding: 20px;
+        padding: 17px;
       }
 
 
-      .hpi-top {
-        padding: 30px;
+      .chart-area {
+        height: 150px;
+
+        gap: 8px;
       }
 
 
-      .hpi-map {
-        padding: 0 30px 25px;
+      .professional-image {
+        padding: 10px;
       }
 
 
-      .hpi-links {
+      .professional-role {
         grid-template-columns: 1fr;
+      }
 
-        padding: 0 30px 30px;
+
+      .professional-links {
+        gap: 7px;
       }
 
 
       .connect-card {
-        padding: 32px 26px;
+        padding: 10px 10px;
       }
 
 
@@ -1708,1166 +2147,785 @@
       .connect-buttons .button {
         flex: 1;
       }
-
-
-      .contact-card {
-        padding: 32px 24px;
+      
+      .connect-card {
+        padding: 10px 10px;
       }
 
 
-      .education-item {
-        grid-template-columns: 38px minmax(0, 1fr) auto;
 
-        gap: 11px;
+      .footer-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
       }
 
-
-      .education-logo {
-        width: 38px;
-        height: 38px;
-      }
-
-
-      .education-logo img {
-        width: 26px;
-        height: 26px;
-      }
-
-
-      .education-item:not(:last-child)::after {
-        left: 18px;
-      }
-
-
-      .education-year {
-        font-size: 0.7rem;
-      }
     }
 
 
-    @media (max-width: 500px) {
+    @media (max-width: 420px) {
 
-      .hero h1 {
-        font-size: clamp(
-          3rem,
-          15vw,
-          4.2rem
-        );
+      h1 {
+        font-size: 3rem;
       }
 
 
-      .hero-title {
-        font-size: 1.05rem;
+      .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
       }
 
 
-      .hero-description {
-        font-size: 0.94rem;
+      .hero-buttons .button {
+        width: 100%;
       }
 
 
-      .fun-card {
-        padding: 25px;
+      .connect-buttons {
+        flex-direction: row;
       }
 
 
-      .education-item {
-        grid-template-columns: 38px minmax(0, 1fr);
-
-        gap: 10px;
+      .connect-buttons .button {
+        width: auto;
       }
 
 
-      .education-year {
-        grid-column: 2;
-
-        padding-top: 0;
-
-        margin-top: -7px;
-      }
-    }
-
-
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
-      }
-
-
-      .wave {
-        animation: none;
+      .project-card {
+        flex-basis: 84vw;
       }
 
     }
 
   </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================================================
-     CONTACT MODAL
-========================================================= -->
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
 
-<div
-  class="contact-modal"
-  id="contactModal"
-  aria-hidden="true">
+  <nav>
 
-  <div
-    class="contact-overlay"
-    onclick="closeContactModal()">
-  </div>
+    <div class="nav-inner">
 
-
-  <div
-    class="contact-card"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="contactTitle">
-
-
-    <button
-      class="contact-close"
-      type="button"
-      onclick="closeContactModal()"
-      aria-label="Close">
-
-      ×
-
-    </button>
-
-
-    <div class="contact-eyebrow">
-      Get in touch
-    </div>
-
-
-    <h2 id="contactTitle">
-      Let's Connect
-    </h2>
-
-
-    <p class="contact-intro">
-      Interested in health data science, research, or collaborating
-      on a project? I'd love to hear from you.
-    </p>
-
-
-    <form
-      action="https://api.web3forms.com/submit"
-      method="POST"
-      id="contactForm">
-
-
-      <input
-        type="hidden"
-        name="access_key"
-        value="646e25ff-d780-4bcf-a68e-083590019f86">
-
-
-      <input
-        type="hidden"
-        name="subject"
-        value="New Portfolio Contact">
-
-
-      <div class="form-field">
-
-        <label for="name">
-          Name
-        </label>
-
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your name"
-          required>
-
-      </div>
-
-
-      <div class="form-field">
-
-        <label for="email">
-          Email
-        </label>
-
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="you@example.com"
-          required>
-
-      </div>
-
-
-      <div class="form-field">
-
-        <label for="message">
-          Message
-        </label>
-
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="I'd love to connect about..."
-          required></textarea>
-
-      </div>
-
-
-      <div
-        class="h-captcha"
-        data-captcha="true">
-      </div>
-
-
-      <button
-        class="button button-primary contact-submit"
-        type="submit">
-
-        Send Message →
-
-      </button>
-
-
-      <p
-        class="form-status"
-        id="formStatus"
-        aria-live="polite">
-      </p>
-
-
-    </form>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
-
-<nav>
-
-  <div class="nav-inner">
-
-
-    <a
-      href="#top"
-      class="nav-name">
-
-      <img
-        src="files/headshot.JPG"
-        alt="Thanh Mai"
-        class="nav-profile">
-
-      <span>
-        Thanh Mai, MS
-      </span>
-
-    </a>
-
-
-    <div class="nav-links">
-
-      <a href="#about">
-        About
-      </a>
-
-      <a href="#projects">
-        Projects
-      </a>
-
-      <a href="#dashboards">
-        Dashboards
-      </a>
-
-      <a href="#professional">
-        Professional Work
-      </a>
-
-      <a href="#connect">
-        Connect
-      </a>
-
-    </div>
-
-  </div>
-
-</nav>
-
-
-<main id="top">
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="hero">
-
-  <div class="container">
-
-    <div class="hero-grid">
-
-
-      <div>
-
-        <div class="eyebrow">
-          Health Data Scientist
-        </div>
-
-
-        <h1>
-          Hi, I’m Thanh!
-
-          <span
-            class="wave"
-            aria-hidden="true">
-
-            👋
-
-          </span>
-        </h1>
-
-
-        <div class="hero-title">
-          Statistical Modeling · Machine Learning · Health Research
-        </div>
-
-
-        <p class="hero-description">
-          I use statistics, machine learning, and data visualization
-          to turn complex health data into clear, interpretable
-          insights that support better decision-making.
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            href="#projects"
-            class="button button-primary">
-
-            Explore My Work ↓
-
-          </a>
-
-
-          <a
-            href="files/resume.pdf"
-            target="_blank"
-            class="button button-secondary">
-
-            View Resume
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="headshot-wrapper">
+      <a href="#top" class="brand">
 
         <img
           src="files/headshot.JPG"
           alt="Thanh Mai"
-          class="headshot">
+        >
 
-      </div>
+        <span class="brand-name">
+          Thanh Mai, MS
+        </span>
 
+      </a>
 
-    </div>
 
-  </div>
+      <div class="nav-links">
 
-</section>
+        <a href="#about">
+          About
+        </a>
 
+        <a href="#projects">
+          Projects
+        </a>
 
-<!-- =========================================================
-     ABOUT
-========================================================= -->
+        <a href="#dashboard">
+          Dashboards
+        </a>
 
-<section id="about">
+        <a href="#professional">
+          Professional Work
+        </a>
 
-  <div class="container">
-
-
-    <div class="section-label">
-      About
-    </div>
-
-
-    <h2 class="section-title">
-      A little about me
-    </h2>
-
-
-    <div class="about-grid">
-
-
-      <!-- =====================================================
-           LEFT COLUMN
-      ====================================================== -->
-
-      <div class="about-text">
-
-
-        <p>
-          I'm Thanh, a health data scientist and researcher with
-          a Master's of Data Science in Health from UCLA Biostatistics.
-        </p>
-
-
-        <p>
-          My work sits at the intersection of statistics,
-          public health, and data science. I enjoy working with
-          real-world health data to understand patterns in
-          outcomes, evaluate disparities, and communicate
-          findings through clear visualizations.
-          My experience includes regression, survival analysis,
-          causal inference, machine learning, geospatial analysis,
-          and interactive dashboard development.
-        </p>
-
-
-        <!-- ===================================================
-             EDUCATION
-        ==================================================== -->
-
-        <div class="education">
-
-
-          <div class="education-title">
-            Education
-          </div>
-
-
-          <!-- Master's -->
-
-          <div class="education-item">
-
-
-            <div class="education-logo">
-
-              <img
-                src="files/ucla-logo.jpg"
-                alt="UCLA">
-
-            </div>
-
-
-            <div>
-
-              <p class="education-school">
-                UCLA
-              </p>
-
-
-              <p class="education-degree">
-                M.S. Data Science in Health
-              </p>
-
-
-              <p class="education-details">
-                Biostatistics · Fielding School of Public Health
-              </p>
-
-
-              <div class="education-honor">
-                ✦ $30,000 Graduate Fellowship
-              </div>
-
-            </div>
-
-
-            <div class="education-year">
-              2026
-            </div>
-
-
-          </div>
-
-
-          <!-- Bachelor's -->
-
-          <div class="education-item">
-
-
-            <div class="education-logo">
-
-              <img
-                src="files/ucla-logo.jpg"
-                alt="UCLA">
-
-            </div>
-
-
-            <div>
-
-              <p class="education-degree">
-                B.A. Psychology &amp; Statistics
-              </p>
-
-
-              <p class="education-details">
-                Computing Specialization · Statistics Minor
-              </p>
-
-
-              <div class="education-honor">
-                ✦ Graduated Cum Laude
-              </div>
-
-            </div>
-
-
-            <div class="education-year">
-              2022
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-      <!-- =====================================================
-           RIGHT COLUMN — FOUR SKILL CARDS
-      ====================================================== -->
-
-      <div class="skills-grid">
-
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            📊
-          </div>
-
-          <h3>
-            Statistical Analysis
-          </h3>
-
-          <p>
-            Regression · Survival Analysis ·
-            Statistical Modeling
-          </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            🤖
-          </div>
-
-          <h3>
-            Machine Learning
-          </h3>
-
-          <p>
-            Random Forest · XGBoost ·
-            Predictive Modeling
-          </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            🗺️
-          </div>
-
-          <h3>
-            Health &amp; Spatial Data
-          </h3>
-
-          <p>
-            Public Health · SDOH ·
-            Geospatial Analysis
-          </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            💻
-          </div>
-
-          <h3>
-            Data Products
-          </h3>
-
-          <p>
-            R · R Shiny · Data Visualization ·
-            Interactive Dashboards
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     PROJECTS
-========================================================= -->
-
-<section id="projects">
-
-  <div class="container">
-
-
-    <div class="section-label">
-      Projects
-    </div>
-
-
-    <h2 class="section-title">
-      Research &amp; Projects
-    </h2>
-
-
-    <p class="section-intro">
-      Selected academic projects exploring health outcomes,
-      disparities, statistical modeling, and machine learning.
-    </p>
-
-
-    <div class="projects-grid">
-
-
-      <!-- PROJECT 1 -->
-
-      <div class="project-card">
-
-        <div class="project-type">
-          Machine Learning
-        </div>
-
-
-        <h3>
-          Evaluating Fairness in Cardiovascular Disease Prediction
-        </h3>
-
-
-        <div class="project-course">
-          Biostatistics 212B · Statistical Learning · UCLA
-        </div>
-
-
-        <p>
-          Examined potential disparities in predictive performance
-          to assess whether machine learning models may reinforce
-          existing inequities in cardiovascular care.
-        </p>
-
-
-        <div class="tags">
-
-          <span class="tag">
-            Random Forest
-          </span>
-
-          <span class="tag">
-            AUC
-          </span>
-
-          <span class="tag">
-            Precision
-          </span>
-
-          <span class="tag">
-            Recall
-          </span>
-
-          <span class="tag">
-            Fairness
-          </span>
-
-        </div>
-
-
-        <a
-          href="files/cvd_ml_fairness.pdf"
-          target="_blank"
-          class="project-link">
-
-          View Full Report →
-
+        <a href="#connect">
+          Connect
         </a>
 
       </div>
 
-
-      <!-- PROJECT 2 -->
-
-      <div class="project-card">
-
-        <div class="project-type">
-          Health Disparities
-        </div>
-
-
-        <h3>
-          The Role of Location in Health Outcomes
-        </h3>
-
-
-        <div class="project-course">
-          Biostatistics 203A · Statistical Computing · UCLA
-        </div>
-
-
-        <p>
-          Examined urban–rural disparities in cancer and heart
-          disease prevalence across California census tracts.
-        </p>
-
-
-        <div class="tags">
-
-          <span class="tag">
-            Regression
-          </span>
-
-          <span class="tag">
-            Covariate Adjustment
-          </span>
-
-          <span class="tag">
-            California
-          </span>
-
-          <span class="tag">
-            Health Disparities
-          </span>
-
-        </div>
-
-
-        <a
-          href="files/urban_rural_ct_analysis.pdf"
-          target="_blank"
-          class="project-link">
-
-          View Full Report →
-
-        </a>
-
-      </div>
-
-
-      <!-- PROJECT 3 -->
-
-      <div class="project-card">
-
-        <div class="project-type">
-          Survival Analysis
-        </div>
-
-
-        <h3>
-          Cardiovascular Mortality by Healthy Lifestyle Index
-        </h3>
-
-
-        <div class="project-course">
-          Biostatistics M215 · Survival Analysis · UCLA
-        </div>
-
-
-        <p>
-          Examined survival patterns for cardiovascular death
-          in patients with stable coronary artery disease,
-          focusing on differences by Healthy Lifestyle Index.
-        </p>
-
-
-        <div class="tags">
-
-          <span class="tag">
-            Kaplan-Meier
-          </span>
-
-          <span class="tag">
-            Cox Model
-          </span>
-
-          <span class="tag">
-            Survival Analysis
-          </span>
-
-        </div>
-
-
-        <a
-          href="files/hlis_cvd_analysis.pdf"
-          target="_blank"
-          class="project-link">
-
-          View Full Report →
-
-        </a>
-
-      </div>
-
-
-      <!-- PROJECT 4 -->
-
-      <div class="project-card">
-
-        <div class="project-type">
-          Survival Analysis
-        </div>
-
-
-        <h3>
-          Survival in Head &amp; Neck Cancer
-        </h3>
-
-
-        <div class="project-course">
-          Biostatistics M215 · Survival Analysis · UCLA
-        </div>
-
-
-        <p>
-          Examined overall survival patterns in patients with
-          head and neck squamous cell carcinoma by clinical stage
-          and primary tumor site.
-        </p>
-
-
-        <div class="tags">
-
-          <span class="tag">
-            Kaplan-Meier
-          </span>
-
-          <span class="tag">
-            Cox Model
-          </span>
-
-          <span class="tag">
-            HNSCC
-          </span>
-
-        </div>
-
-
-        <a
-          href="files/hnscc_survival_analysis.pdf"
-          target="_blank"
-          class="project-link">
-
-          View Full Report →
-
-        </a>
-
-      </div>
-
-
-      <!-- PROJECT 5 -->
-
-      <div class="project-card">
-
-        <div class="project-type">
-          Observational Health Data
-        </div>
-
-
-        <h3>
-          Antidepressant Use &amp; Demographic Factors
-        </h3>
-
-
-        <div class="project-course">
-          Biostatistics 218 · Observational Health Data Science
-          &amp; Informatics · UCLA
-        </div>
-
-
-        <p>
-          Examined associations between antidepressant
-          prescription patterns and demographic, socioeconomic,
-          and health-related variables.
-        </p>
-
-
-        <div class="tags">
-
-          <span class="tag">
-            Regression
-          </span>
-
-          <span class="tag">
-            Observational Data
-          </span>
-
-          <span class="tag">
-            Health Informatics
-          </span>
-
-        </div>
-
-
-        <a
-          href="files/antidepressant_analysis.pdf"
-          target="_blank"
-          class="project-link">
-
-          View Full Report →
-
-        </a>
-
-      </div>
-
-
     </div>
 
-  </div>
+  </nav>
 
-</section>
 
 
-<!-- =========================================================
-     DASHBOARD
-========================================================= -->
+  <main id="top">
 
-<section
-  id="dashboards"
-  class="dashboard-section">
 
-  <div class="container">
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
+    <section class="hero">
 
-    <div class="section-label">
-      Interactive Data
-    </div>
-
-
-    <h2 class="section-title">
-      Dashboards
-    </h2>
-
-
-    <p class="section-intro">
-      Interactive tools that make statistical analysis easier
-      to explore and interpret.
-    </p>
-
-
-    <div class="dashboard-card">
-
-
-      <div class="dashboard-info">
-
-
-        <div class="project-type">
-          R Shiny
-        </div>
-
-
-        <h3>
-          Head &amp; Neck Cancer
-          Survival Explorer
-        </h3>
-
-
-        <p>
-          An interactive survival analysis explorer examining
-          overall survival among patients with head and neck
-          squamous cell carcinoma.
-        </p>
-
-
-        <div class="tags">
-
-          <span class="tag">
-            R
-          </span>
-
-          <span class="tag">
-            Shiny
-          </span>
-
-          <span class="tag">
-            Kaplan-Meier
-          </span>
-
-          <span class="tag">
-            Cox Regression
-          </span>
-
-        </div>
-
-
-        <a
-          href="https://ttmai24.shinyapps.io/HNSCC_Survival_Analysis/"
-          target="_blank"
-          class="button button-primary">
-
-          Open Dashboard →
-
-        </a>
-
-
-      </div>
-
-
-      <div class="dashboard-preview">
-
-
-        <div class="dashboard-preview-inner">
-
-
-          <div class="fake-chart-title">
-            Survival Analysis Explorer
-          </div>
-
-
-          <div class="chart-lines">
-
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-
-          </div>
-
-
-          <div
-            style="
-              margin-top: 15px;
-              font-size: 0.72rem;
-              color: #777;
-            ">
-
-            Interactive survival analysis ·
-            Clinical stage ·
-            Tumor site
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     PROFESSIONAL WORK
-========================================================= -->
-
-<section
-  id="professional"
-  class="professional">
-
-  <div class="container">
-
-
-    <div class="section-label">
-      Professional Experience
-    </div>
-
-
-    <h2 class="section-title">
-      Healthy Places Index
-    </h2>
-
-
-    <p class="section-intro">
-      Public Health Alliance of Southern California
-    </p>
-
-
-    <div class="hpi-card">
-
-
-      <div class="hpi-top">
+      <div class="container hero-grid">
 
 
         <div>
 
-          <h3>
-            Using data to understand
-            community health.
-          </h3>
+          <div class="eyebrow">
+            Health Data Scientist
+          </div>
+
+
+          <h1>
+            Hi, I'm Thanh!
+            <span class="wave">👋</span>
+          </h1>
+
+
+          <p class="hero-title">
+            Statistical Modeling · Machine Learning · Health Research
+          </p>
+
+
+          <p class="hero-subtitle">
+            I use statistics, machine learning, and data visualization
+            to turn complex health data into clear, interpretable insights
+            that support better decision-making.
+          </p>
+
+
+          <div class="hero-buttons">
+
+            <a
+              href="#projects"
+              class="button button-primary"
+            >
+              Explore My Work ↓
+            </a>
+
+
+            <a
+              href="files/resume.pdf"
+              class="button button-secondary"
+              target="_blank"
+            >
+              View Resume
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+          <div class="hero-photo-wrap">
+
+            <img
+              src="files/headshot.JPG"
+              alt="Portrait of Thanh Mai"
+              class="hero-photo"
+            >
+
+            <div class="hero-accent"></div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="about" class="about">
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <div class="section-label">
+              About
+            </div>
+
+            <h2 class="section-title">
+              A little bit
+              about me.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+          <!-- LEFT COLUMN -->
+
+          <div class="about-copy">
+
+            <p>
+              I'm Thanh, a health data scientist and researcher with a
+              Master's of Data Science in Health from UCLA Biostatistics.
+            </p>
+
+
+            <p>
+              My work sits at the intersection of
+              <strong>statistics, public health, and data science.</strong>
+              I enjoy working with real-world health data to understand
+              patterns in outcomes, evaluate disparities, and communicate
+              findings through clear visualizations. My experience includes
+              regression, survival analysis, causal inference, machine
+              learning, geospatial analysis, and interactive dashboard
+              development.
+            </p>
+
+
+            <!-- EDUCATION REMAINS INSIDE ABOUT -->
+
+            <div class="education">
+
+
+              <div class="education-title">
+                Education
+              </div>
+
+
+              <!-- Master's -->
+
+              <div class="education-item">
+
+
+                <div class="education-logo">
+
+                  <img
+                    src="files/ucla-logo.jpg"
+                    alt="UCLA">
+
+                </div>
+
+
+                <div>
+
+                  <p class="education-school">
+                    UCLA
+                  </p>
+
+
+                  <p class="education-degree">
+                    M.S. Data Science in Health
+                  </p>
+
+
+                  <p class="education-details">
+                    Biostatistics · Fielding School of Public Health
+                  </p>
+
+
+                  <div class="education-honor">
+                    ✦ $30,000 Graduate Fellowship
+                  </div>
+
+                </div>
+
+
+                <div class="education-year">
+                  2026
+                </div>
+
+
+              </div>
+
+
+              <!-- Bachelor's -->
+
+              <div class="education-item">
+
+
+                <div class="education-logo">
+
+                  <img
+                    src="files/ucla-logo.jpg"
+                    alt="UCLA">
+
+                </div>
+
+
+                <div>
+
+                  <p class="education-degree">
+                    B.A. Psychology &amp; Statistics
+                  </p>
+
+
+                  <p class="education-details">
+                    Computing Specialization · Statistics Minor
+                  </p>
+
+
+                  <div class="education-honor">
+                    ✦ Graduated Cum Laude
+                  </div>
+
+                </div>
+
+
+                <div class="education-year">
+                  2022
+                </div>
+
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- RIGHT COLUMN / FOUR SKILLS -->
+
+          <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+              <div class="skill-icon">
+                📊
+              </div>
+
+              <h3>
+                Statistical Modeling
+              </h3>
+
+              <p>
+                Regression, survival analysis, causal inference,
+                hypothesis testing, and model interpretation.
+              </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+              <div class="skill-icon">
+                🤖
+              </div>
+
+              <h3>
+                Machine Learning
+              </h3>
+
+              <p>
+                Random forest, XGBoost, classification,
+                prediction, model evaluation, and fairness analysis.
+              </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+              <div class="skill-icon">
+                📈
+              </div>
+
+              <h3>
+                Data Visualization
+              </h3>
+
+              <p>
+                R Shiny, ggplot2, interactive dashboards,
+                maps, reports, and communicating complex results.
+              </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+              <div class="skill-icon">
+                🗺️
+              </div>
+
+              <h3>
+                Geospatial Analysis
+              </h3>
+
+              <p>
+                Spatial data, community-level analysis,
+                mapping, and social determinants of health.
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECTS
+    ====================================================== -->
+
+    <section id="projects" class="projects">
+
+      <div class="container">
+
+
+        <div class="projects-header">
+
+          <div>
+
+            <div class="section-label">
+              Research & Projects
+            </div>
+
+            <h2>
+              Quantitative questions,<br>
+              real health contexts.
+            </h2>
+
+          </div>
 
 
           <p>
-            Conducted statistical and spatial analyses of public
-            health indicators supporting Healthy Places Index work
-            across California and Utah.
+            A selection of projects spanning machine learning,
+            health disparities, survival analysis, and observational
+            health data science.
           </p>
 
         </div>
 
 
-        <div class="hpi-role">
 
-          <strong>
-            My contributions
-          </strong>
+        <div class="projects-scroll-wrapper">
 
+          <div class="projects-track">
+
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card">
+
+              <div class="project-number">
+                01
+              </div>
+
+              <div class="project-type">
+                Machine Learning
+              </div>
+
+              <h3>
+                Evaluating Fairness in Cardiovascular Disease Prediction
+              </h3>
+
+              <p class="project-course">
+                Biostatistics 212B · Statistical Learning · UCLA
+              </p>
+
+
+              <div class="project-tags">
+
+                <span class="project-tag">
+                  Random Forest
+                </span>
+
+                <span class="project-tag">
+                  AUC
+                </span>
+
+                <span class="project-tag">
+                  Precision
+                </span>
+
+                <span class="project-tag">
+                  Recall
+                </span>
+
+                <span class="project-tag">
+                  Fairness
+                </span>
+
+              </div>
+
+
+              <div class="project-footer">
+
+                <a
+                  href="files/cvd_ml_fairness.pdf"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Full Report
+                  <span>→</span>
+                </a>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card">
+
+              <div class="project-number">
+                02
+              </div>
+
+              <div class="project-type">
+                Health Disparities
+              </div>
+
+              <h3>
+                The Role of Location in Health Outcomes
+              </h3>
+
+              <p class="project-course">
+                Biostatistics 203A · Statistical Computing · UCLA
+              </p>
+
+
+              <div class="project-tags">
+
+                <span class="project-tag">
+                  Regression
+                </span>
+
+                <span class="project-tag">
+                  Covariate Adjustment
+                </span>
+
+                <span class="project-tag">
+                  California
+                </span>
+
+                <span class="project-tag">
+                  Health Disparities
+                </span>
+
+              </div>
+
+
+              <div class="project-footer">
+
+                <a
+                  href="files/urban_rural_ct_analysis.pdf"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Full Report
+                  <span>→</span>
+                </a>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card">
+
+              <div class="project-number">
+                03
+              </div>
+
+              <div class="project-type">
+                Survival Analysis
+              </div>
+
+              <h3>
+                Cardiovascular Mortality by Healthy Lifestyle Index
+              </h3>
+
+              <p class="project-course">
+                Biostatistics M215 · Survival Analysis · UCLA
+              </p>
+
+
+              <div class="project-tags">
+
+                <span class="project-tag">
+                  Kaplan-Meier
+                </span>
+
+                <span class="project-tag">
+                  Cox Model
+                </span>
+
+                <span class="project-tag">
+                  Survival Analysis
+                </span>
+
+              </div>
+
+
+              <div class="project-footer">
+
+                <a
+                  href="files/hlis_cvd_analysis.pdf"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Full Report
+                  <span>→</span>
+                </a>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 4 -->
+
+            <article class="project-card">
+
+              <div class="project-number">
+                04
+              </div>
+
+              <div class="project-type">
+                Survival Analysis
+              </div>
+
+              <h3>
+                Survival in Head &amp; Neck Cancer
+              </h3>
+
+              <p class="project-course">
+                Biostatistics M215 · Survival Analysis · UCLA
+              </p>
+
+
+              <div class="project-tags">
+
+                <span class="project-tag">
+                  Kaplan-Meier
+                </span>
+
+                <span class="project-tag">
+                  Cox Model
+                </span>
+
+                <span class="project-tag">
+                  HNSCC
+                </span>
+
+              </div>
+
+
+              <div class="project-footer">
+
+                <a
+                  href="files/hnscc_survival_analysis.pdf"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Full Report
+                  <span>→</span>
+                </a>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 5 -->
+
+            <article class="project-card">
+
+              <div class="project-number">
+                05
+              </div>
+
+              <div class="project-type">
+                Observational Health Data
+              </div>
+
+              <h3>
+                Antidepressant Use &amp; Demographic Factors
+              </h3>
+
+              <p class="project-course">
+                Biostatistics 218 · Observational Health Data Science
+                &amp; Informatics · UCLA
+              </p>
+
+
+              <div class="project-tags">
+
+                <span class="project-tag">
+                  Regression
+                </span>
+
+                <span class="project-tag">
+                  Observational Data
+                </span>
+
+                <span class="project-tag">
+                  Health Informatics
+                </span>
+
+              </div>
+
+
+              <div class="project-footer">
+
+                <a
+                  href="files/antidepressant_analysis.pdf"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Full Report
+                  <span>→</span>
+                </a>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="projects-scroll-hint">
 
           <span>
-            Statistical analysis<br>
-            Spatial analysis<br>
-            Data automation<br>
-            Public health reporting<br>
-            Data visualization
+            More projects
+          </span>
+
+          <span class="projects-scroll-arrow">
+            →
           </span>
 
         </div>
@@ -2875,345 +2933,686 @@
 
       </div>
 
+    </section>
 
-      <div class="hpi-map">
 
-        <img
-          src="files/ca_hpi_map.png"
-          alt="California Healthy Places Index Map">
+
+    <!-- =====================================================
+         DASHBOARD
+    ====================================================== -->
+
+    <section id="dashboard" class="dashboard-section">
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <div class="section-label">
+              Interactive Dashboard
+            </div>
+
+            <h2>
+              From analysis<br>
+              to visualizations.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+
+          <div class="dashboard-copy">
+
+            <h3>
+              Head &amp; Neck Cancer Survival Explorer
+            </h3>
+
+
+            <p>
+              An interactive R Shiny dashboard exploring survival
+              patterns among patients with head and neck squamous
+              cell carcinoma. Users can examine Kaplan-Meier curves,
+              compare patient groups, and explore Cox proportional
+              hazards model results.
+            </p>
+
+
+            <div class="dashboard-meta">
+
+              <span>
+                R Shiny
+              </span>
+
+              <span>
+                Survival Analysis
+              </span>
+
+              <span>
+                Kaplan-Meier
+              </span>
+
+              <span>
+                Cox Model
+              </span>
+
+            </div>
+
+
+            <div style="margin-top: 24px;">
+
+              <a
+                href="https://ttmai24.shinyapps.io/HNSCC_Survival_Analysis/"
+                target="_blank"
+                class="button button-primary"
+              >
+                Open dashboard →
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="dashboard-preview">
+
+            <div class="chart-top">
+
+              <div class="chart-title">
+                Survival by Patient Group
+              </div>
+
+              <div class="chart-filter">
+                5 Years
+              </div>
+
+            </div>
+
+
+            <div class="chart-area">
+
+              <div class="chart-bar bar-1"></div>
+
+              <div class="chart-bar bar-2"></div>
+
+              <div class="chart-bar bar-3"></div>
+
+              <div class="chart-bar bar-4"></div>
+
+              <div class="chart-bar bar-5"></div>
+
+              <div class="chart-bar bar-6"></div>
+
+              <div class="chart-bar bar-7"></div>
+
+            </div>
+
+
+            <div class="chart-legend">
+
+              <span>
+                Survival probability
+              </span>
+
+              <span>
+                Patient groups →
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
 
       </div>
 
-
-      <div class="hpi-links">
-
-
-        <a
-          href="https://www.healthyplacesindex.org/"
-          target="_blank"
-          class="hpi-link">
-
-          California HPI →
-
-        </a>
+    </section>
 
 
-        <a
-          href="https://dhhs.utah.gov/utahhpi/"
-          target="_blank"
-          class="hpi-link">
 
-          Utah HPI →
+    <!-- =====================================================
+         PROFESSIONAL WORK / HPI
+    ====================================================== -->
 
-        </a>
+    <section id="professional" class="professional">
 
-
-        <a
-          href="https://files.healthyplacesindex.org/UT-HPI-2-Technical-Report.zip"
-          target="_blank"
-          class="hpi-link">
-
-          Utah Technical Report →
-
-        </a>
+      <div class="container">
 
 
-        <a
-          href="https://dhhs.utah.gov/wp-content/uploads/UT_Tribal_HPI_Report_Final-2025.pdf"
-          target="_blank"
-          class="hpi-link">
+        <div class="section-heading">
 
-          Utah Tribal HPI →
+          <div>
 
-        </a>
+            <div class="section-label">
+              Professional Work
+            </div>
 
+            <h2>
+              Healthy Places Index
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="professional-grid">
+
+
+          <!-- LEFT: ALL ORIGINAL HPI INFORMATION -->
+
+          <div class="professional-copy">
+
+            <h3>
+              Using data to understand community health.
+            </h3>
+
+
+            <p>
+              At the Public Health Alliance of Southern California,
+              I work with large public datasets to understand how
+              community conditions shape health.
+            </p>
+
+
+            <p>
+              My work includes statistical and spatial analyses of
+              public health indicators supporting the Healthy Places
+              Index (HPI) across California and Utah.
+            </p>
+
+
+            <p>
+              I have contributed to HPI score production, technical
+              reports, geographic analyses, and tools designed to
+              help public health practitioners identify communities
+              experiencing greater health and social needs.
+            </p>
+
+
+            <div class="professional-links">
+
+              <a
+                href="https://map.healthyplacesindex.org/?redirect=false"
+                target="_blank"
+                class="professional-link"
+              >
+                California HPI →
+              </a>
+
+
+              <a
+                href="https://dhhs.utah.gov/utahhpi/"
+                target="_blank"
+                class="professional-link"
+              >
+                Utah HPI →
+              </a>
+
+
+              <a
+                href="https://files.healthyplacesindex.org/UT-HPI-2-Technical-Report.zip"
+                target="_blank"
+                class="professional-link"
+              >
+                Utah Technical Report →
+              </a>
+
+
+              <a
+                href="https://dhhs.utah.gov/wp-content/uploads/UT_Tribal_HPI_Report_Final-2025.pdf"
+                target="_blank"
+                class="professional-link"
+              >
+                Utah Tribal HPI →
+              </a>
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- RIGHT: CLICKABLE / HOVERABLE HPI MAP -->
+
+          <a
+            href="https://www.healthyplacesindex.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="professional-image"
+            aria-label="Visit the Healthy Places Index website"
+          >
+
+            <img
+              src="files/ca_hpi_map.png"
+              alt="California Healthy Places Index map"
+            >
+
+          </a>
+
+
+        </div>
 
       </div>
 
+    </section>
+
+
+
+    <!-- =====================================================
+         OUTSIDE OF DATA
+    ====================================================== -->
+
+    <section class="fun-section">
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <div class="section-label">
+              Outside of Data
+            </div>
+
+            <h2>
+              Things I enjoy<br>
+              outisde of work!
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="fun-grid">
+
+
+          <div class="fun-card">
+
+            <div class="fun-icon">
+              🏞️
+            </div>
+
+            <h3>
+              National Parks
+            </h3>
+            
+        
+
+            <p>
+              I've visited 9 national parks so far!
+              Channel Islands and Death Valley are next up on my list.
+            </p>
+
+          </div>
+
+
+
+          <div class="fun-card">
+
+            <div class="fun-icon">
+              🎭
+            </div>
+
+            <h3>
+              Broadway
+            </h3>
+
+            <p>
+              I have strong opinions about musicals and will happily
+              talk about them for hours. Phantom of the Opera,
+              Moulin Rouge!, Hadestown, and The Lost Boys are some
+              of my favorites.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONNECT
+    ====================================================== -->
+
+    <section id="connect" class="connect">
+
+      <div class="container">
+
+
+        <div class="connect-card">
+
+
+          <div>
+
+            <div class="section-label">
+              Connect
+            </div>
+
+
+            <h2>
+              Let's connect!
+            </h2>
+
+
+            <p>
+              I'm interested in opportunities involving health data
+              science, healthcare analytics, outcomes research,
+              behavioral health, and patient-centered data.
+            </p>
+
+          </div>
+
+
+          <div class="connect-buttons">
+
+
+            <!-- EMAIL BUTTON -->
+
+            <button
+              class="button button-primary"
+              type="button"
+              onclick="openContactModal()"
+            >
+              Email Me ✉
+            </button>
+
+
+            <!-- LINKEDIN BUTTON -->
+
+            <a
+              href="https://www.linkedin.com/in/thanh-24-m"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+            >
+              LinkedIn ↗
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <p>
+        Thanh Mai, MS
+      </p>
+
+      <p>
+        Health Data Scientist · Researcher
+      </p>
+
+      <p>
+        © 2026 Thanh Mai
+      </p>
 
     </div>
 
-  </div>
-
-</section>
+  </footer>
 
 
-<!-- =========================================================
-     OUTSIDE OF DATA
-========================================================= -->
 
-<section class="fun-section">
+  <!-- =======================================================
+       CONTACT MODAL
+    ======================================================== -->
 
-  <div class="container">
+  <div
+    class="contact-modal"
+    id="contactModal"
+    aria-hidden="true"
+  >
 
-
-    <div class="section-label">
-      👋 Outside of data
+    <div
+      class="contact-overlay"
+      onclick="closeContactModal()"
+    >
     </div>
 
 
-    <div class="fun-grid">
+    <div
+      class="contact-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contactTitle"
+    >
 
 
-      <!-- NATIONAL PARKS -->
-
-      <div class="fun-card">
-
-
-        <div class="fun-icon">
-          🌲
-        </div>
-
-
-        <h3>
-          National park enthusiast
-        </h3>
+      <button
+        class="contact-close"
+        type="button"
+        onclick="closeContactModal()"
+        aria-label="Close"
+      >
+        ×
+      </button>
 
 
-        <p>
-          I’ve visited 9 national parks so far!
-          Channel Islands is next on the list.
-        </p>
-
-
-        <div class="fun-list">
-          Yosemite · Sequoia · Kings Canyon · Redwoods ·
-          Lassen · Joshua Tree · Crater Lake · Grand Canyon · Zion
-        </div>
-
-
+      <div class="contact-eyebrow">
+        Get in touch
       </div>
 
 
-      <!-- BROADWAY -->
+      <h2 id="contactTitle">
+        Let's Connect
+      </h2>
 
-      <div class="fun-card">
+
+      <p class="contact-intro">
+        Interested in health data science, research, or collaborating
+        on a project? I'd love to hear from you.
+      </p>
 
 
-        <div class="fun-icon">
-          🎭
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        id="contactForm"
+      >
+
+
+        <input
+          type="hidden"
+          name="access_key"
+          value="646e25ff-d780-4bcf-a68e-083590019f86"
+        >
+
+
+        <input
+          type="hidden"
+          name="subject"
+          value="New Portfolio Contact"
+        >
+
+
+        <div class="form-field">
+
+          <label for="name">
+            Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            required
+          >
+
         </div>
 
 
-        <h3>
-          Broadway fanatic
-        </h3>
+        <div class="form-field">
 
+          <label for="email">
+            Email
+          </label>
 
-        <p>
-          I have strong opinions about musicals
-          and will happily talk about them for hours!
-        </p>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          >
 
-
-        <div class="fun-list">
-          Favorites: Phantom of the Opera ·
-          Moulin Rouge! · Hadestown · The Lost Boys
         </div>
 
 
-      </div>
+        <div class="form-field">
 
+          <label for="message">
+            Message
+          </label>
 
-    </div>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="I'd love to connect about..."
+            required
+          ></textarea>
 
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     LET'S CONNECT
-========================================================= -->
-
-<section
-  class="connect-section"
-  id="connect">
-
-  <div class="container">
-
-
-    <div class="connect-card">
-
-
-      <div>
-
-        <div class="section-label">
-          Get in touch
         </div>
 
 
-        <h2>
-          Let's connect!
-        </h2>
-
-
-        <p>
-          I love meeting new people and am always interested in
-          connecting with people working at the intersection of
-          health, data, and research!
-        </p>
-
-      </div>
-
-
-      <div class="connect-buttons">
+        <div
+          class="h-captcha"
+          data-captcha="true"
+        >
+        </div>
 
 
         <button
-          class="button button-primary"
-          type="button"
-          onclick="openContactModal()">
-
-          Email Me ✉
-
+          class="button button-primary contact-submit"
+          type="submit"
+        >
+          Send Message →
         </button>
 
 
-        <a
-          href="https://www.linkedin.com/in/thanh-24-m"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button button-secondary">
-
-          LinkedIn ↗
-
-        </a>
+        <p
+          class="form-status"
+          id="formStatus"
+          aria-live="polite"
+        >
+        </p>
 
 
-      </div>
-
+      </form>
 
     </div>
 
   </div>
 
-</section>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+  <!-- =======================================================
+       WEB3FORMS CAPTCHA SCRIPT
+  ======================================================== -->
 
-<footer>
-
-  <div class="container">
-
-
-    <strong>
-      Thanh Mai, MS
-    </strong>
+  <script
+    src="https://web3forms.com/client/script.js"
+    async
+    defer
+  ></script>
 
 
-    <br>
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
 
 
-    Health Data Scientist · Researcher
+    function openContactModal() {
 
+      const modal =
+        document.getElementById("contactModal");
 
-    <br><br>
+      modal.classList.add("active");
 
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
 
-    © 2026 Thanh Mai
+      document.body.style.overflow = "hidden";
 
+      setTimeout(function() {
 
-  </div>
+        const nameInput =
+          document.getElementById("name");
 
-</footer>
+        if (nameInput) {
 
+          nameInput.focus();
 
-</main>
+        }
 
-
-<!-- =========================================================
-     WEB3FORMS SCRIPT
-========================================================= -->
-
-<script
-  src="https://web3forms.com/client/script.js"
-  async
-  defer>
-</script>
-
-
-<!-- =========================================================
-     CONTACT MODAL JAVASCRIPT
-========================================================= -->
-
-<script>
-
-  function openContactModal() {
-
-    const modal =
-      document.getElementById("contactModal");
-
-    modal.classList.add("active");
-
-    modal.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-    document.body.style.overflow = "hidden";
-
-
-    setTimeout(function () {
-
-      const nameInput =
-        document.getElementById("name");
-
-      if (nameInput) {
-        nameInput.focus();
-      }
-
-    }, 200);
-
-  }
-
-
-  function closeContactModal() {
-
-    const modal =
-      document.getElementById("contactModal");
-
-    modal.classList.remove("active");
-
-    modal.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-    document.body.style.overflow = "";
-
-  }
-
-
-  document.addEventListener(
-    "keydown",
-    function (event) {
-
-      if (event.key === "Escape") {
-
-        closeContactModal();
-
-      }
+      }, 200);
 
     }
-  );
 
 
-  const contactModal =
-    document.getElementById("contactModal");
 
-  if (contactModal) {
+    function closeContactModal() {
 
-    contactModal.addEventListener(
-      "click",
-      function (event) {
+      const modal =
+        document.getElementById("contactModal");
 
-        if (
-          event.target === contactModal
-        ) {
+      modal.classList.remove("active");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow = "";
+
+    }
+
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
 
           closeContactModal();
 
@@ -3222,11 +3621,9 @@
       }
     );
 
-  }
 
-</script>
+  </script>
 
 
 </body>
-
 </html>
